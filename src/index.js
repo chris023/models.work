@@ -11,14 +11,14 @@ import { rootReducer } from './Redux/Reducers/index/index';
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && 
                  window.__REDUX_DEVTOOLS_EXTENSION__();
 
-const srote = createStore(rootReducer, devTools);
+const store = createStore(rootReducer, devTools);
 
 ReactDOM.render(
-<Provider store={store}>
-  <Router>
-    <App />
-  </Router>
-</Provider>
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 , document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

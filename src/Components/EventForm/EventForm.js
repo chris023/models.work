@@ -43,8 +43,6 @@ class EventForm extends Component {
     });
   }
 
-
-  
   render() {
     return (
       <div className='event-form'>
@@ -52,6 +50,7 @@ class EventForm extends Component {
           <p className='event-form-progress-label'>1</p>
           <input name='eventTitle' type="text" placeholder='Event Title' value={this.state.eventTitle} onChange={this.handleInputChange}/>
           <select className="eventForm-event-type-select" name='eventType' value={this.state.eventType} onChange={this.handleInputChange}>
+            <option value='' disabled selected>Event Type</option>
             <option value="On Premise">On Premise</option>
             <option value="Off premise">Off Premise</option>
             <option value="Special Event">Special Event</option>
@@ -77,6 +76,7 @@ class EventForm extends Component {
           <p className='event-form-progress-label'>3</p>
           <label htmlFor="employee-dropdown">Employee Type:</label>
           <select className="employee-type" name="employee-dropdown" name='employeeType' value={this.state.employeeType} onChange={this.handleInputChange}>
+            <option value='' disabled selected>Model Type</option>
             <option value="Brand Ambassador">Brand Ambassador</option>
             <option value="Brand Model">Brand Model</option>
             <option value="Promotional Model">Promotional Model</option>

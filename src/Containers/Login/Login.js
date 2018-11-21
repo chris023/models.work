@@ -129,11 +129,16 @@ class Login extends Component {
       })
   }
 
+  cachedUser = (user) => {
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+
   authWithEmail = (email, password) => {
     app.auth().signInWithEmailAndPassword(email, password)
       .then((response) => {
         if (response) {
           this.props.setCurrentUser(response.user);
+          this.cachedUser(response.user)
           this.setState({ redirect: true });
         }
       })
@@ -153,6 +158,7 @@ class Login extends Component {
           });
         } else {
           this.props.setCurrentUser(user.user);
+          this.cachedUser(user.user)
           this.setState({ redirect: true });
         }
       })

@@ -1,13 +1,72 @@
 import React, { Component } from 'react';
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
+
+import Header from '../Header/Header';
+import LandingPage from '../LandingPage/LandingPage';
+import Login from '../../Containers/Login/Login';
+import Logout from '../../Containers/Logout/Logout';
+import EventForm from '../EventForm/EventForm';
+import Dashboard from '../../Containers/Dashboard/Dashboard';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+
 import './App.css';
+import { connect } from 'react-redux';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true,
+    };
+  }
+
+  componentWillMount() {
+    this.setState({
+      loading: false,
+    })
+  }
+
   render() {
+
+    if (this.state.loading) {
+      return (
+        <div style={{ textAlign: "center", position: "absolute", top: "25%", left: "50%" }}>
+          <h3>Loading...</h3>
+        </div>
+      )
+    }
+
     return (
       <div className="App">
+        <Route
+          path='/'
+          component={Header}
+        />
+        <Switch>
+          <Route
+            exact path='/'
+            component={LandingPage} />
+          <Route
+            path='/login'
+            component={Login} />
+          <Route
+            path='/logout'
+            component={Logout} />
+          <ProtectedRoute
+            path='/eventForm'
+            component={EventForm} />
+          <ProtectedRoute
+            path='/dashboard'
+            component={Dashboard} />
+          <Redirect to='/' />
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => ({
+  authenticated: state.authenticated
+})
+
+export default withRouter(connect(mapStateToProps)(App));

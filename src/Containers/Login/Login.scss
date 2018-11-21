@@ -1,0 +1,29 @@
+.Login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .login-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-top: 10%;
+    width: 90%;
+    max-width: 315px;
+
+    border: solid 1px #ddd;
+  }
+  
+  .login-form-header {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -8,6 +8,9 @@ import Logout from '../../Containers/Logout/Logout';
 import EventForm from '../EventForm/EventForm';
 import Dashboard from '../../Containers/Dashboard/Dashboard';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import Onboarding from '../../Containers/Onboarding/Onboarding';
+
+import { login } from '../../Redux/Actions/index';
 
 import './App.css';
 import { connect } from 'react-redux';
@@ -18,6 +21,13 @@ class App extends Component {
     this.state = {
       loading: true,
     };
+  }
+
+  componentDidMount() {
+    const cachedUser = localStorage.getItem('user');
+    if (cachedUser) {
+      this.props.setCurrentUser(JSON.parse(cachedUser));
+    }
   }
 
   componentWillMount() {
@@ -58,6 +68,9 @@ class App extends Component {
           <ProtectedRoute
             path='/dashboard'
             component={Dashboard} />
+          <ProtectedRoute
+            path='/onboard'
+            component={Onboarding} />
           <Redirect to='/' />
         </Switch>
       </div>
@@ -69,4 +82,8 @@ const mapStateToProps = state => ({
   authenticated: state.authenticated
 })
 
-export default withRouter(connect(mapStateToProps)(App));
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(login(user, !!user)),
+});
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));

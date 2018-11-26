@@ -13,6 +13,7 @@ class Logout extends Component {
   }
 
   componentWillMount() {
+    localStorage.clear('user')
     app.auth().signOut().then(() => {
       this.props.setLogoutProps();
       this.setState({

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 
 import Header from '../Header/Header';
-import LandingPage from '../LandingPage/LandingPage';
+import LandingPage from '../LandingPage/LandingPage.jsx';
 import Login from '../../Containers/Login/Login';
 import Logout from '../../Containers/Logout/Logout';
 import EventForm from '../EventForm/EventForm';

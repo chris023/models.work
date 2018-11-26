@@ -11,7 +11,7 @@ class Header extends Component {
       <div className='Header'>
         <NavLink exact to='/' className='nav logo' activeClassName='selected'> LOGO GOES HERE </NavLink>
         <NavLink to='/eventForm'> REMEMBER TO DELETE THIS JACK</NavLink>
-        <NavLink to='/eventForm'> onboarding</NavLink>
+        <NavLink to='/onboard'> onboarding</NavLink>
         {
           this.props.authenticated
             ? <NavLink to='/logout' className='nav signout' activeClassName='selected'>Sign Out</NavLink>

@@ -12,16 +12,42 @@ class Onboarding extends Component {
     }
   }
 
-  handleGenderSelect = event => {
+  handleChangeSelect = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value})
   }
 
+  handleGenderSelect = gender => {
+    this.setState({ gender });
+  }
+
+  renderGenderSpecificForm = () => {
+    if (this.state.gender === 'female') {
+      return (
+        <div className="onboarding-form">
+          <input type="text" className="onboarding-form" placeholder='Bust'/>
+          <input type="text" className="onboarding-form" placeholder='Hips'/>
+          <input type="text" className="onboarding-form" placeholder='Dress Size'/>
+        </div>
+      )
+    }
+    return (
+      <div className="onboarding-form">
+        <input type="text" className="onboarding-form" placeholder='Chest'/>
+        <input type="text" className="onboarding-form" placeholder='Collar'/>
+        <input type="text" className="onboarding-form" placeholder='Inseam'/>
+        <input type="text" className="onboarding-form" placeholder='Suit'/>
+        <input type="text" className="onboarding-form" placeholder='Sleeve'/>
+      </div>
+    )
+  }
+
+
   render() {
     return (
       <div className="onboarding">
-        <input type="radio" name="gender" value="male" selected onClick={this.handleGenderSelect}/> <p>Female</p>
-        <input type="radio" name="gender" value="female" onClick={this.handleGenderSelect}/> <p>Male</p>
+        <input type="radio" name="gender" value="female" selected onClick={() => this.handleGenderSelect('female')}/> <p>Female</p>
+        <input type="radio" name="gender" value="male" onClick={() => this.handleGenderSelect('male')}/> <p>Male</p>
         <input type="text" className="onboarding-form" placeholder='First Name'/>
         <input type="text" className="onboarding-form" placeholder='Last Name'/>
         <input type="text" className="onboarding-form" placeholder='Email'/>
@@ -31,9 +57,7 @@ class Onboarding extends Component {
         <input type="text" className="onboarding-form" placeholder='Bio'/>
         <input type="text" className="onboarding-form" placeholder='Height'/>
         <input type="text" className="onboarding-form" placeholder='Waist'/>
-        <input type="text" className="onboarding-form" placeholder='Bust'/>
-        <input type="text" className="onboarding-form" placeholder='Hips'/>
-        <input type="text" className="onboarding-form" placeholder='Dress Size'/>
+        {this.renderGenderSpecificForm()}
         <input type="text" className="onboarding-form" placeholder='Shoe Size'/>
         <input type="text" className="onboarding-form" placeholder='Hair Color'/>
         <input type="text" className="onboarding-form" placeholder='Eye Color'/>

@@ -21,13 +21,11 @@ class App extends Component {
     this.state = {
       loading: true,
     };
-  }
 
-  componentDidMount() {
     const cachedUser = localStorage.getItem('user');
     if (cachedUser) {
       this.props.setCurrentUser(JSON.parse(cachedUser));
-    }
+    } 
   }
 
   componentWillMount() {

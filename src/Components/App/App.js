@@ -8,7 +8,7 @@ import Logout from '../../Containers/Logout/Logout';
 import EventForm from '../EventForm/EventForm';
 import Dashboard from '../../Containers/Dashboard/Dashboard';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import Onboarding from '../../Containers/Onboarding/Onboarding';
+import OnboardingScreen from '../../Containers/Onboarding/OnboaringMain/OnboardingScreen/OnboardingScreen';
 
 import { login } from '../../Redux/Actions/index';
 
@@ -68,7 +68,7 @@ class App extends Component {
             component={Dashboard} />
           <ProtectedRoute
             path='/onboard'
-            component={Onboarding} />
+            component={OnboardingScreen} />
           <Redirect to='/' />
         </Switch>
       </div>

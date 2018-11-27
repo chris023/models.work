@@ -12,7 +12,7 @@ import Onboarding from '../../Containers/Onboarding/Onboarding';
 
 import { login } from '../../Redux/Actions/index';
 
-import './App.css';
+import './App.scss';
 import { connect } from 'react-redux';
 
 class App extends Component {

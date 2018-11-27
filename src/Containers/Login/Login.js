@@ -51,7 +51,7 @@ class Login extends Component {
               <form ref={(form) => { this.loginForm = form }} className="login-form" onSubmit={this.triggerAuthWithEmail}>
                 <input type="text" ref={(input) => { this.emailInput = input }} className="email-input login-input" placeholder='Email' onChange={this.currentInput} />
                 <input type='password' ref={(input) => { this.passwordInput = input }} className="password-input login-input" placeholder='Password' onChange={this.currentInput} />
-                <button type='submit' className="submit-input">Login</button>
+                <button type='submit' className="login-input">Login</button>
                 <p className="login-option" onClick={() => this.setType('social')}>I'll Use Social Instead</p>
               </form>
             )
@@ -73,7 +73,7 @@ class Login extends Component {
                 <input type="text" ref={(input) => { this.emailInput = input }} className="email-input login-input" placeholder='Email' />
                 <input type='password' onChange={this.passwordsMatch} ref={(input) => { this.passwordInput = input }} className="password-input login-input" placeholder='Password' />
                 <input type='password' onChange={this.passwordsMatch} ref={(input) => { this.passwordConfirmInput = input }} className="password-input login-input" placeholder='Confirm Password' />
-                <button type='submit' className="submit-input">Sign Up</button>
+                <button type='submit' className="login-input">Sign Up</button>
                 <p className="login-option" onClick={() => this.setType('social')}>I'll Use Social Instead</p>
               </form>
             )

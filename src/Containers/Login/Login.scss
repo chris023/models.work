@@ -1,21 +1,51 @@
 .Login {
-  width: 100%;
   display: flex;
   justify-content: center;
+  padding: 12px;
+  min-height: 100vh;
 
   .login-form-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-
+    min-height: 100%;
     margin-top: 10%;
-    width: 90%;
+    width: 100%;
     max-width: 315px;
 
     border: solid 1px #ddd;
+    border-radius: 5px;
+  }
+
+  .login-form-header-button,
+  .active {
+    width: 50%;
+    border-radius: 5px 5px 0 0;
+    border: none;
+    height: 40px
+  }
+
+  .login-form-header-button {
+    background-color: grey;
+  }
+
+  .active {
+    background-color: white;
+  }
+
+  .submit-input {
+    height: 40px;
+    margin: 20px 0 0 0;
+  }
+
+  .login-input {
+    height: 40px;
+    margin: 20px 0;
   }
   
+  .google-login {
+    // margin-top: 5px;
+  }
+
   .login-form-header {
     display: flex;
     justify-content: flex-end;

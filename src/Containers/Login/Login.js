@@ -17,7 +17,14 @@ class Login extends Component {
       status: 'login',
       redirect: false,
       passwordsMatch: false,
+      loginType: 'social'
     }
+  }
+
+  setType = loginType => {
+    this.setState({
+      loginType
+    });
   }
 
   setView = status => {
@@ -29,22 +36,48 @@ class Login extends Component {
   renderForm = () => {
     switch (this.state.status) {
       case 'login':
-        return (
-          <form ref={(form) => { this.loginForm = form }} className="login-form" onSubmit={this.triggerAuthWithEmail}>
-            <input type="text" ref={(input) => { this.emailInput = input }} className="email-input" placeholder='Email' onChange={this.currentInput} />
-            <input type='password' ref={(input) => { this.passwordInput = input }} className="password-input" placeholder='Password' onChange={this.currentInput} />
-            <button type='submit' className="submit-input-login">Login</button>
-          </form>
-        )
+        switch (this.state.loginType) {
+          case 'social':
+            return (
+              <div className="login-form">
+                <button className='login-input google-login' onClick={this.authWithGoogle}>Login with Google</button>
+                <button className='login-input'>Login with LinkedIn</button>
+                <button className='login-input'>Login with Instagram  </button>
+                <p className="login-option" onClick={() => this.setType('email')}>I'll Use Email Instead</p>
+              </div>
+            )
+          case 'email':
+            return (
+              <form ref={(form) => { this.loginForm = form }} className="login-form" onSubmit={this.triggerAuthWithEmail}>
+                <input type="text" ref={(input) => { this.emailInput = input }} className="email-input login-input" placeholder='Email' onChange={this.currentInput} />
+                <input type='password' ref={(input) => { this.passwordInput = input }} className="password-input login-input" placeholder='Password' onChange={this.currentInput} />
+                <button type='submit' className="submit-input">Login</button>
+                <p className="login-option" onClick={() => this.setType('social')}>I'll Use Social Instead</p>
+              </form>
+            )
+        }
       case 'signup':
-        return (
-          <form ref={(form) => { this.loginForm = form }} className="login-form" onSubmit={this.signupWithEmail}>
-            <input type="text" ref={(input) => { this.emailInput = input }} className="email-input" placeholder='Email' />
-            <input type='password' onChange={this.passwordsMatch} ref={(input) => { this.passwordInput = input }} className="password-input" placeholder='Password' />
-            <input type='password' onChange={this.passwordsMatch} ref={(input) => { this.passwordConfirmInput = input }} className="password-input" placeholder='Confirm Password' />
-            <button type='submit' className="submit-input-signup">Sign Up</button>
-          </form>
-        )
+        switch (this.state.loginType) {
+          case 'social':
+            return  (
+              <div className="login-form">
+                <button className='login-input google-login' onClick={this.authWithGoogle}>SignUp with Google</button>
+                  <button className='login-input'>SignUp with LinkedIn</button>
+                  <button className='login-input'>SignUp with Instagram  </button>
+                  <p className="login-option" onClick={() => this.setType('email')}>I'll Use Email Instead</p>
+              </div>
+            )
+          case 'email':
+            return (
+              <form ref={(form) => { this.loginForm = form }} className="login-form" onSubmit={this.signupWithEmail}>
+                <input type="text" ref={(input) => { this.emailInput = input }} className="email-input login-input" placeholder='Email' />
+                <input type='password' onChange={this.passwordsMatch} ref={(input) => { this.passwordInput = input }} className="password-input login-input" placeholder='Password' />
+                <input type='password' onChange={this.passwordsMatch} ref={(input) => { this.passwordConfirmInput = input }} className="password-input login-input" placeholder='Confirm Password' />
+                <button type='submit' className="submit-input">Sign Up</button>
+                <p className="login-option" onClick={() => this.setType('social')}>I'll Use Social Instead</p>
+              </form>
+            )
+        }
       default:
         return <p>System Error</p>
     }
@@ -157,7 +190,7 @@ class Login extends Component {
             position: toast.POSITION.TOP_CENTER
           });
         } else {
-          this.props.setCurrentUser(user.user);
+          this.props.setCurrentUser(user.user); 
           this.cachedUser(user.user)
           this.setState({ redirect: true });
         }
@@ -179,11 +212,10 @@ class Login extends Component {
       <div className='Login'>
         <div className='login-form-container'>
           <div className="login-form-header">
-            <button onClick={() => this.setView('login')}>Login</button>
-            <button onClick={() => this.setView('signup')}>SignUp</button>
+            <button className={this.state.status === 'login' ? 'active' : 'login-form-header-button' } onClick={() => this.setView('login')}>Login</button>
+            <button className={this.state.status === 'signup' ? 'active' : 'login-form-header-button' } onClick={() => this.setView('signup')}>SignUp</button>
           </div>
           {this.renderForm()}
-          <button onClick={this.authWithGoogle}>Log in with Google</button>
         </div>
         <ToastContainer />
       </div>

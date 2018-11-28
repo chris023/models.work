@@ -8,12 +8,16 @@ import Events from '../Events/Events';
 import Footer from '../Footer/Footer';
 import Reports from '../Reports/Reports';
 import Wallet from '../Wallet/Wallet';
+import Header from '../Header/Header';
 
 class ModelScreen extends Component {
 
   render() {
     return (
       <div className="user-model-screen">
+        <Route 
+            path ='/user/'
+            component={Header} />
         <Route
             exact path='/user/'
             component={Dashboard} />

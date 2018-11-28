@@ -6,9 +6,9 @@ import LandingPage from '../LandingPage/LandingPage.jsx';
 import Login from '../../Containers/Login/Login';
 import Logout from '../../Containers/Logout/Logout';
 import EventForm from '../EventForm/EventForm';
-import Dashboard from '../../Containers/Dashboard/Dashboard';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 import OnboardingScreen from '../../Containers/Onboarding/OnboaringMain/OnboardingScreen/OnboardingScreen';
+import ModelScreen from '../../Containers/UserScreen/ModelSide/ModelScreen/ModelScreen';
 
 import { login } from '../../Redux/Actions/index';
 
@@ -64,8 +64,8 @@ class App extends Component {
             path='/eventForm'
             component={EventForm} />
           <ProtectedRoute
-            path='/dashboard'
-            component={Dashboard} />
+            path='/user'
+            component={ModelScreen} />
           <ProtectedRoute
             path='/onboard'
             component={OnboardingScreen} />

@@ -20,7 +20,7 @@ class ConnectSocial extends Component {
           <div className="connected-status">X</div>
           <button>Instagram</button>
         </div>
-        <NavLink to='/dashboard'>Finish</NavLink>
+        <NavLink to='/user'>Finish</NavLink>
       </div>
     )
   }

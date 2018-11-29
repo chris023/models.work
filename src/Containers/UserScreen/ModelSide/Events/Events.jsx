@@ -13,7 +13,10 @@ class Events extends Component {
         <section className="user-screen-model-events-main-content-container">
           <div className="user-screen-model-events-event-card">
             <div className="user-screen-model-events-event-card-header">
-              <h2 className="user-screen-model-events-event-card-company">Apple</h2>
+              <div className="user-screen-model-events-event-card-header-info-container">
+                <p className="user-screen-model-events-event-card-header-info-location">Miami Beach</p>
+                <p className="user-screen-model-events-event-card-header-info-type">Brand Ambassador</p>
+              </div>
               <div className="user-screen-model-events-event-card-header-date-time-container">
                 <p className="user-screen-model-events-event-card-header-date">December 20, 2029</p>
                 <p className="user-screen-model-events-event-card-header-time">2:00 - 8:00</p>

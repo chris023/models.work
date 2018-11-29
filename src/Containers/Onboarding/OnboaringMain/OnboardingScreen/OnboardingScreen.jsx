@@ -9,9 +9,6 @@ import OnboardingNav from '../OnboaringNav/OnboardingNav';
 
 
 class OnboardingScreen extends Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return (

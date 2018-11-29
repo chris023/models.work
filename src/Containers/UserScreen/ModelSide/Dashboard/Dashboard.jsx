@@ -21,7 +21,13 @@ class Dashboard extends Component {
             </div>
           </div>
         </header>
-        <h1>CALENDAR FILLER</h1>
+        <section className="user-screen-model-dash-main-content-container">
+          <div className="user-screen-model-dash-main-content-header">
+              <button className="user-screen-model-dash-main-content-header-option">Calendar</button>
+              <button className="user-screen-model-dash-main-content-header-option">My Events</button>
+          </div>
+          <h1>CALENDAR FILLER</h1>
+        </section>
       </div>
     )
   }

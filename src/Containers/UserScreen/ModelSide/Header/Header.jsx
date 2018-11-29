@@ -7,7 +7,7 @@ class Header extends Component {
   render() {
     return (
       <div className="user-screen-model-screen-header">
-        <NavLink to="/user/events"><p>BurgerBoi</p></NavLink>
+        <p>BurgerBoi</p>
         <p>Dashboard</p>
         <NavLink to="/user/wallet"><p>Wallet</p></NavLink>
       </div>

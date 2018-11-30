@@ -7,12 +7,12 @@ class BasicInfo extends Component {
 
   render() {
     return (
-      <div className="basic-info">
-        <input type="text" className="onboard-model-basicinfo-input" placeholder='First Name'/>
-        <input type="text" className="onboard-model-basicinfo-input" placeholder='Last Name'/>
-        <input type="text" className="onboard-model-basicinfo-input" placeholder='Phone'/>
-        <input type="text" className="onboard-model-basicinfo-input" placeholder='Zip Code'/>
-        <NavLink to='/onboard/model-onboard/add-photo'>Continue</NavLink>
+      <div className="flex-center-col BasicInfo">
+        <input type="text" className="input input--first_name" placeholder='First Name'/>
+        <input type="text" className="input input--last_name" placeholder='Last Name'/>
+        <input type="text" className="input input--phone" placeholder='Phone'/>
+        <input type="text" className="input input--zip_code" placeholder='Zip Code'/>
+        <NavLink className="navlink navlink--continue" to='/onboard/model-onboard/connect-social'>Continue</NavLink>
       </div>
     )
   }

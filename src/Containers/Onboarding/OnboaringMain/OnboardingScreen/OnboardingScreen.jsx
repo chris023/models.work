@@ -9,13 +9,9 @@ import OnboardingNav from '../OnboaringNav/OnboardingNav';
 
 
 class OnboardingScreen extends Component {
-  constructor() {
-    super()
-  }
-
   render() {
     return (
-      <div className="Onboarding-screen">
+      <div className="OnboardingScreen">
         <Route exact path='/onboard/'
                component={OnboardingNav} />
          <Route

@@ -5,28 +5,28 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div className="user-screen-model-dash">
-        <header className="user-screen-model-dash-header">
-          <div className="user-screen-model-dash-header-top">
-            <p className="user-screen-model-dash-greeting">Hi, Christian</p>
+      <div className="Dashboard">
+        <header className="Dashboard__header">
+          <h2 className="header__greeting">Hi, Christian</h2>
+          <div className="header__my_wallet">
+            <h3 className="my_wallet__text">My Wallet</h3>
+            <p className="my_wallet__value">$131.67</p>
           </div>
-          <div className="user-screen-model-dash-header-bottom">
-            <div className="user-screen-model-dash-upcoming-events-container">
-              <h1 className="user-screen-model-dash-upcoming-events-number">4</h1>
-              <p className="user-screen-model-dash-upcoming-events-label">Upcomping Events</p>
-            </div>
-            <div className="user-screen-model-dash-completed-events-container">
-              <p className="user-screen-model-dash-completed-events-label">Events Completed</p>
-            <h1 className="user-screen-model-dash-completed-events-number">12</h1>
-            </div>
+          <div className="header__upcoming_events">
+            <h3 className="upcoming_events__num">4</h3>
+            <p className="upcoming_events__text">Upcoming Events</p>
+          </div>
+          <div className="header__completed_events">
+            <p className="completed_events__text">Events Completed</p>
+          <h3 className="completed_events__num">12</h3>
           </div>
         </header>
-        <section className="user-screen-model-dash-main-content-container">
-          <div className="user-screen-model-dash-main-content-header">
-              <button className="user-screen-model-dash-main-content-header-option">Calendar</button>
-              <button className="user-screen-model-dash-main-content-header-option">My Events</button>
+        <section className="Dashboard__container">
+          <div className="Dashboard__subheader">
+              <p className="subheader__text">Calendar</p>
+              <button className="subheader__my_events">My Events</button>
           </div>
-          <h1>CALENDAR FILLER</h1>
+          <p>CALENDAR FILLER</p>
         </section>
       </div>
     )

@@ -26,9 +26,9 @@ class ModelScreen extends Component {
         <Route
             path='/user/wallet'
             component={Wallet} />
-        <Route
+        {/* <Route
             path='/user/'
-            component={MobileFooter} />
+            component={MobileFooter} /> */}
       </div>
     )
   }

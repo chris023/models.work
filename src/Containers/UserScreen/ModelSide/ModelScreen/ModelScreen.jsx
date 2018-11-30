@@ -5,19 +5,15 @@ import { Route } from 'react-router-dom';
 //Components
 import Dashboard from '../Dashboard/Dashboard';
 import Events from '../Events/Events';
-import Footer from '../Footer/Footer';
+import MobileFooter from '../MobileFooter/MobileFooter.jsx';
 import Reports from '../Reports/Reports';
 import Wallet from '../Wallet/Wallet';
-import Header from '../Header/Header';
 
 class ModelScreen extends Component {
 
   render() {
     return (
       <div className="user-model-screen">
-        <Route 
-            path ='/user/'
-            component={Header} />
         <Route
             exact path='/user/'
             component={Dashboard} />
@@ -30,9 +26,9 @@ class ModelScreen extends Component {
         <Route
             path='/user/wallet'
             component={Wallet} />
-        <Route
+        {/* <Route
             path='/user/'
-            component={Footer} />
+            component={MobileFooter} /> */}
       </div>
     )
   }

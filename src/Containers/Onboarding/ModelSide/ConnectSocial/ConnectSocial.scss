@@ -1,0 +1,17 @@
+.ConnectSocial {
+  height: 100%;
+
+  .container--social_button {
+    border: solid 1px black;
+    border-radius: 3px;
+
+    margin: 15px 0; 
+    padding: 10px 10px;
+
+    width: 140px;
+
+    p {
+      margin: 0;
+    }
+  }
+}

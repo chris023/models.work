@@ -7,20 +7,20 @@ class ConnectSocial extends Component {
 
   render() {
     return (
-      <div className="connect-social">
-        <div className="connect-social-media-container">
-          <div className="connected-status">%</div>
-          <button>LinkedIn</button>
+      <div className="flex-center-col ConnectSocial">
+        <div className="flex-center container--social_button">
+          <div className="social_button--icon">%</div>
+          <p>LinkedIn</p>
         </div>
-        <div className="connect-social-media-container">
-          <div className="connected-status">%</div>
-          <button>Facebook</button>
+        <div className="flex-center container--social_button">
+          <div className="social_button--icon">%</div>
+          <p>Facebook</p>
         </div>
-        <div className="connect-social-media-container">
-          <div className="connected-status">X</div>
-          <button>Instagram</button>
+        <div className="flex-center container--social_button">
+          <div className="social_button--icon">X</div>
+          <p>Instagram</p>
         </div>
-        <NavLink to='/user'>Finish</NavLink>
+        <NavLink className="navlink" to='/user'>Finish</NavLink>
       </div>
     )
   }

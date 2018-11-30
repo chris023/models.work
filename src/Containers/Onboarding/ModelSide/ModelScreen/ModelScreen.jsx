@@ -16,7 +16,7 @@ class ModelScreen extends Component {
 
   render() {
     return (
-      <div className="model-screen">
+      <div className="ModelScreen">
         <Route exact path='/onboard/model-onboard/'
                component={BasicInfo} />
         <Route path='/onboard/model-onboard/add-photo'

@@ -16,12 +16,12 @@ export default class Sidedrawer extends Component {
               <p className="name__lastname">Rodriguez</p>
             </div>
           </div>
-          <NavLink to='/user/dashboard' className='navlink navlink--first'>Dashboard</NavLink>
-          <NavLink to='/user/events'  className='navlink'>Events</NavLink>
-          <NavLink to='/user/reports' className='navlink'>Reports</NavLink>
-          <NavLink to='/user/wallet' className='navlink navlink__last'>Wallet</NavLink>
+          <NavLink to='/user/dashboard' onClick={this.props.toggleSideNav} className='navlink navlink--first'>Dashboard</NavLink>
+          <NavLink to='/user/events' onClick={this.props.toggleSideNav} className='navlink'>Events</NavLink>
+          <NavLink to='/user/reports' onClick={this.props.toggleSideNav} className='navlink'>Reports</NavLink>
+          <NavLink to='/user/wallet' onClick={this.props.toggleSideNav} className='navlink navlink__last'>Wallet</NavLink>
         </div>
-        <NavLink to='/logout' className='navlink navlink__logout'>Logout</NavLink>
+        <NavLink to='/logout' onClick={this.props.toggleSideNav} className='navlink navlink__logout'>Logout</NavLink>
       </div>
     )
   }

@@ -22,6 +22,7 @@ class Header extends Component {
   }
 
   render() {
+
     const landingHeader = () => (
       <div className="landing_header">
         { this.props.authenticated
@@ -37,7 +38,7 @@ class Header extends Component {
         <p className="app_header__title">Models.work</p>
         {
           this.state.showSideNav &&
-          <Sidedrawer />
+          <Sidedrawer toggleSideNav={this.toggleSideNav} />
         }
       </div>
     )

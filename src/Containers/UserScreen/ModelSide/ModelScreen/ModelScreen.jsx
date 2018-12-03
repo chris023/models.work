@@ -9,7 +9,6 @@ import Events from '../Events/Events';
 import MobileFooter from '../MobileFooter/MobileFooter.jsx';
 import Reports from '../Reports/Reports';
 import Wallet from '../Wallet/Wallet';
-import SideDrawer from '../Sidedrawer/Sidedrawer'
 
 class ModelScreen extends Component {
 
@@ -28,11 +27,6 @@ class ModelScreen extends Component {
         <Route
             path='/user/wallet'
             component={Wallet} />
-        { 
-          this.props.status && 
-            <SideDrawer /> 
-        }
-        
         {/* <Route
             path='/user/'
             component={MobileFooter} /> */}

@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import './Sidedrawer.scss';
-import { connect } from 'react-redux';
-import { sidedrawer } from '../../../../Redux/Actions';
 
 import { NavLink } from 'react-router-dom';
 
-class Sidedrawer extends Component {
-  closeSidedrawer = () => {
-    this.props.toggleSidedrawer(false)
-  }
+export default class Sidedrawer extends Component {
 
   render() {
     return (
-      <div className="Sidedrawer" onBlur={() => this.closeSidedrawer()}>
+      <div className="Sidedrawer">
         <div class="top_container">
           <div className="flex-center profile">
             <p className="profile__image">Img</p>
@@ -31,9 +26,3 @@ class Sidedrawer extends Component {
     )
   }
 }
-
-const mapDispatchToProps = dispatch => ({
-  toggleSidedrawer: status => dispatch(sidedrawer(status))
-})
-
-export default connect(null, mapDispatchToProps)(Sidedrawer);

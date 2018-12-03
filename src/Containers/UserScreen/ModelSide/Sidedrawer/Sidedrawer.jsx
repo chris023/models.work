@@ -16,12 +16,12 @@ export default class Sidedrawer extends Component {
               <p className="name__lastname">Rodriguez</p>
             </div>
           </div>
-          <NavLink to='/user/dashboard' className='navlink navlink--first' onClick={() => this.closeSidedrawer()}>Dashboard</NavLink>
-          <NavLink to='/user/events'  className='navlink' onClick={() => this.closeSidedrawer()}>Events</NavLink>
-          <NavLink to='/user/reports' className='navlink' onClick={() => this.closeSidedrawer()}>Reports</NavLink>
-          <NavLink to='/user/wallet' className='navlink navlink__last' onClick={() => this.closeSidedrawer()}>Wallet</NavLink>
+          <NavLink to='/user/dashboard' className='navlink navlink--first'>Dashboard</NavLink>
+          <NavLink to='/user/events'  className='navlink'>Events</NavLink>
+          <NavLink to='/user/reports' className='navlink'>Reports</NavLink>
+          <NavLink to='/user/wallet' className='navlink navlink__last'>Wallet</NavLink>
         </div>
-        <NavLink to='/logout' className='navlink navlink__logout' onClick={() => this.closeSidedrawer()}>Logout</NavLink>
+        <NavLink to='/logout' className='navlink navlink__logout'>Logout</NavLink>
       </div>
     )
   }

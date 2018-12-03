@@ -4,7 +4,13 @@ import { NavLink, Route } from 'react-router-dom';
 import './Header.scss';
 import { connect } from 'react-redux';
 
+import { sidedrawer } from '../../Redux/Actions/index';
+
 class Header extends Component {
+
+  toggleSidebar = () => {
+    this.props.toggleSidedrawer(!this.props.status)
+  }
 
   render() {
     const landingHeader = () => (
@@ -18,7 +24,7 @@ class Header extends Component {
 
     const appHeader = () => (
       <div className="app_header">
-        <p className="app_header__nav">Ham</p>
+        <p className="app_header__nav" onClick={() => this.toggleSidebar()}>Ham</p>
         <p className="app_header__title">Models.work</p>
       </div>
     )
@@ -38,6 +44,11 @@ class Header extends Component {
 
 const mapStateToProps = state => ({
   authenticated: state.user.authenticated,
+  status: state.sidedrawer.status
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = dispatch => ({
+  toggleSidedrawer: status => dispatch(sidedrawer(status))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

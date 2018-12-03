@@ -1,7 +1,13 @@
+$mobileAppHeaderHeight: 50px;
+$mobileLandingHeaderHeight: 100px;
+
 .Header {
   width: 100%;
 
   .landing_header {
+    height: $mobileLandingHeaderHeight;
+    box-sizing: border-box;
+
     display: flex;
     justify-content: flex-end;
     padding: 23px 23px 0 0;
@@ -23,6 +29,7 @@
   .app_header {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    height: $mobileAppHeaderHeight;
 
     &__title {
       text-align: center;

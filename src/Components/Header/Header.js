@@ -25,8 +25,8 @@ class Header extends Component {
     const landingHeader = () => (
       <div className="landing_header">
         { this.props.authenticated
-            ? <NavLink to='/logout' className='flex-center landing__button landing__signout'>Sign Out</NavLink>
-            : <NavLink to='/login' className='flex-center landing__button landing__login'>Login</NavLink>
+            ? <NavLink to='/logout' className='flex-center landing_header__button landing_header__signout'>Sign Out</NavLink>
+            : <NavLink to='/login' className='flex-center landing_header__button landing_header__login'>Login</NavLink>
         }
       </div>
     )

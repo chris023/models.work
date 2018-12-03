@@ -3,7 +3,6 @@ import { NavLink, Route } from 'react-router-dom';
 
 import './Header.scss';
 import { connect } from 'react-redux';
-import PersonalBio from '../../Containers/Onboarding/ModelSide/PersonalBio/PersonalBio';
 
 class Header extends Component {
 
@@ -26,22 +25,13 @@ class Header extends Component {
 
     return (
       <div className="Header">
-      <Route
-        exact path='/'
-          component={landingHeader} />
-      <Route
-        path='/user'
-        component={appHeader} />
+        <Route
+          exact path='/'
+            component={landingHeader} />
+        <Route
+          path='/user'
+          component={appHeader} />
       </div>
-      
-      // <div className='Header'>
-      //   <NavLink to='/onboard'> onboarding</NavLink>
-      //   {
-      //     this.props.authenticated
-      //       ? <NavLink to='/logout' className='nav signout' activeClassName='selected'>Sign Out</NavLink>
-      //       : <NavLink to='/login' className='nav login' activeClassName='selected'>Login/Signup</NavLink>
-      //   }
-      // </div>
     )
   }
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './ModelScreen.scss';
 import { Route } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 //Components
 import Dashboard from '../Dashboard/Dashboard';
@@ -10,7 +9,7 @@ import MobileFooter from '../MobileFooter/MobileFooter.jsx';
 import Reports from '../Reports/Reports';
 import Wallet from '../Wallet/Wallet';
 
-class ModelScreen extends Component {
+export default class ModelScreen extends Component {
 
   render() {
     return (
@@ -34,9 +33,3 @@ class ModelScreen extends Component {
     )
   }
 }
-
-const mapStateToProps = state => ({
-    status: state.sidedrawer.status
-});
-
-export default connect(mapStateToProps)(ModelScreen);

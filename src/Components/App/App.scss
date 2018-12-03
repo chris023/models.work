@@ -3,7 +3,10 @@
 .App {
   height: 100vh;
   font-family: 'Roboto', sans-serif;
+  overflow: hidden;
 }
+
+//Utilities
 
 .flex-center {
   display: flex;

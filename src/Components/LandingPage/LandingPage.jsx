@@ -9,11 +9,6 @@ class LandingPage extends Component {
     return (
       <div className="landing-page">
         <div className="logo-container">
-        {
-          this.props.authenticated
-            ? <NavLink to='/logout' className='nav signout' activeClassName='selected'><div className="nav-text">Sign Out</div></NavLink>
-            : <NavLink to='/login' className='nav login' activeClassName='selected'><div className="nav-text">Login</div></NavLink>
-        } 
           <h2 className='logo'>models<span className='logo-span'>dot</span>work</h2>
           <p className='logo-sub-text sub-text-1'>Booked fast.</p>
           <p className='logo-sub-text sub-text-2'>Paid faster.</p>

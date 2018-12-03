@@ -15,7 +15,7 @@ class ModelScreen extends Component {
     return (
       <div className="user-model-screen">
         <Route
-            exact path='/user/'
+            exact path='/user/dashboard'
             component={Dashboard} />
         <Route
             path='/user/events'

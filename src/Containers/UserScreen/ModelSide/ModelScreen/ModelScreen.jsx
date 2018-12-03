@@ -13,15 +13,6 @@ import SideDrawer from '../Sidedrawer/Sidedrawer'
 
 class ModelScreen extends Component {
 
-    renderSidebar = () => {
-        if (this.props.status) {
-            return (
-                <Route path='/user/'
-                       component={SideDrawer}/>
-            )
-        }
-    }
-
   render() {
     return (
       <div className="user-model-screen">
@@ -37,7 +28,11 @@ class ModelScreen extends Component {
         <Route
             path='/user/wallet'
             component={Wallet} />
-        {this.renderSidebar()}
+        { 
+          this.props.status && 
+            <SideDrawer /> 
+        }
+        
         {/* <Route
             path='/user/'
             component={MobileFooter} /> */}

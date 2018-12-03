@@ -16,9 +16,9 @@ class Sidedrawer extends Component {
         <div class="top_container">
           <div className="flex-center profile">
             <p className="profile__image">Img</p>
-            <div class="container">
-              <p className="container__firstname">Antoinette</p>
-              <p className="container__lastname">Rodriguez</p>
+            <div class="name">
+              <p className="name__firstname">Antoinette</p>
+              <p className="name__lastname">Rodriguez</p>
             </div>
           </div>
           <NavLink to='/user/dashboard' className='navlink navlink--first' onClick={() => this.closeSidedrawer()}>Dashboard</NavLink>

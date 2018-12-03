@@ -12,16 +12,21 @@ class Sidedrawer extends Component {
 
   render() {
     return (
-      <div className="sidedrawer" onBlur={() => this.closeSidedrawer()}>
-        <div className="sidedrawer-header-profile">
-          <p className="header-image-profile">Image Here</p>
-          <p className="header-text-name">Chris Meyey</p>
+      <div className="Sidedrawer" onBlur={() => this.closeSidedrawer()}>
+        <div class="top_container">
+          <div className="flex-center profile">
+            <p className="profile__image">Img</p>
+            <div class="container">
+              <p className="container__firstname">Antoinette</p>
+              <p className="container__lastname">Rodriguez</p>
+            </div>
+          </div>
+          <NavLink to='/user/dashboard' className='navlink navlink--first' onClick={() => this.closeSidedrawer()}>Dashboard</NavLink>
+          <NavLink to='/user/events'  className='navlink' onClick={() => this.closeSidedrawer()}>Events</NavLink>
+          <NavLink to='/user/reports' className='navlink' onClick={() => this.closeSidedrawer()}>Reports</NavLink>
+          <NavLink to='/user/wallet' className='navlink navlink__last' onClick={() => this.closeSidedrawer()}>Wallet</NavLink>
         </div>
-        <NavLink to='/user/dashboard' onClick={() => this.closeSidedrawer()}>Dashboard</NavLink>
-        <NavLink to='/user/events' onClick={() => this.closeSidedrawer()}>Events</NavLink>
-        <NavLink to='/user/reports' onClick={() => this.closeSidedrawer()}>Reports</NavLink>
-        <NavLink to='/user/wallet' onClick={() => this.closeSidedrawer()}>Wallet</NavLink>
-        <NavLink to='/logout' onClick={() => this.closeSidedrawer()}>Logout</NavLink>
+        <NavLink to='/logout' className='navlink navlink__logout' onClick={() => this.closeSidedrawer()}>Logout</NavLink>
       </div>
     )
   }

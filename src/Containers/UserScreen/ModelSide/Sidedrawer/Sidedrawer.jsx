@@ -23,12 +23,10 @@ class Sidedrawer extends Component {
           <p className="header-text-name">Chris Meyey</p>
         </div>
         <NavLink to='/user/dashboard' onClick={() => this.closeSidedrawer()}>Dashboard</NavLink>
-        {/* <NavLink>Wallet</NavLink>
-        <NavLink>Events</NavLink>
-        <NavLink>Tasks</NavLink>
-        <NavLink>Profile</NavLink>
-        <NavLink>Notifications</NavLink>
-        <NavLink>Sign Out</NavLink> */}
+        <NavLink to='/user/events' onClick={() => this.closeSidedrawer()}>Events</NavLink>
+        <NavLink to='/user/reports' onClick={() => this.closeSidedrawer()}>Reports</NavLink>
+        <NavLink to='/user/wallet' onClick={() => this.closeSidedrawer()}>Wallet</NavLink>
+        <NavLink to='/logout' onClick={() => this.closeSidedrawer()}>Logout</NavLink>
       </div>
     )
   }

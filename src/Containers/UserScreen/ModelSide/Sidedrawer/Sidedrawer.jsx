@@ -6,11 +6,6 @@ import { sidedrawer } from '../../../../Redux/Actions';
 import { NavLink } from 'react-router-dom';
 
 class Sidedrawer extends Component {
-  constructor() {
-    super();
-
-  }
-
   closeSidedrawer = () => {
     this.props.toggleSidedrawer(false)
   }

@@ -75,7 +75,7 @@ class EventForm extends Component {
         <section className="staffing-info">
           <p className='event-form-progress-label'>3</p>
           <label htmlFor="employee-dropdown">Employee Type:</label>
-          <select className="employee-type" name="employee-dropdown" name='employeeType' value={this.state.employeeType} onChange={this.handleInputChange}>
+          <select className="employee-type" name='employeeType' value={this.state.employeeType} onChange={this.handleInputChange}>
             <option value='' disabled selected>Model Type</option>
             <option value="Brand Ambassador">Brand Ambassador</option>
             <option value="Brand Model">Brand Model</option>

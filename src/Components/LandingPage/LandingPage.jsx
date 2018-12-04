@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './LandingPage.css';
-import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 class LandingPage extends Component {

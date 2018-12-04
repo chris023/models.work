@@ -34,10 +34,13 @@ $mobileLandingHeaderHeight: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: $mobileAppHeaderHeight;
+    width: 100%;
 
     position: fixed;
     top: 0;
     left: 0;
+
+    background: #fff;
 
     &__title {
       text-align: center;

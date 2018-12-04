@@ -1,0 +1,99 @@
+.Reports {
+  padding: 20px;
+
+  .header{
+    background: #fff;
+
+    border: solid 1px #000;
+    border-radius: 3px 3px 0 0;
+
+    padding: 5px 10px;
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    &_top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      &__right {
+        text-align: right;
+      }
+    }
+
+    &_bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-top: 5px;
+
+      &__button {
+        background: #fff;
+        border: solid 1px #000;
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .report {
+    border: solid 1px #000;
+
+    .units_sold {
+
+      .product {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        margin: 10px 0;
+
+        &__name {
+          font-size: 12px;
+          max-width: 50%;
+        }
+
+        &__input_container {
+          display: flex;
+          align-items: flex-end;
+
+          p {
+            margin: 0;
+          }
+        }
+
+        &__input {
+            width: 50px;
+            height: 40px;
+        }
+      }
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .question {
+
+      &-oneline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      &__input {
+        &-small {
+            width: 50px;
+            height: 40px;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,13 @@
 import { db } from '../../firebase';
 
 export const getEvents = () => {
-  db.collection('events').get()
+ return db.collection('events')
+    .get()
     .then(querySnapshot => {
-      console.log(querySnapshot)
+      const events = []
       querySnapshot.forEach(doc => {
-        const { name, status } = doc.data()
-        console.log(`${doc.id}: name: ${name} status:  ${status}`)
-      });
-    });
-}
+        events.push({[doc.id]: doc.data()})
+      }); 
+      return events
+    })
+};

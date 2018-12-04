@@ -1,0 +1,35 @@
+.MobileFooter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  height: 40px;
+  width: 100%;
+
+  .nav_element {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    font-size: 14px;
+    color: #000;
+    
+    background: #fff;
+    
+    border: solid 1px
+  }
+
+  .sub_menu {
+    display: grid;
+    grid-template-columns: calc(100vw / 3);
+    grid-template-rows: repeat(3, 40px);
+
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+  }
+}

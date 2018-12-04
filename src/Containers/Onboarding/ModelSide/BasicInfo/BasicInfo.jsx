@@ -12,6 +12,7 @@ class BasicInfo extends Component {
         <input type="text" className="input input--last_name" placeholder='Last Name'/>
         <input type="text" className="input input--phone" placeholder='Phone'/>
         <input type="text" className="input input--zip_code" placeholder='Zip Code'/>
+        <input type="text" className="input input--dob" placeholder='Date of Birth'/>
         <NavLink className="navlink navlink--continue" to='/onboard/model-onboard/connect-social'>Continue</NavLink>
       </div>
     )

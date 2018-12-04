@@ -16,6 +16,7 @@ export default class Sidedrawer extends Component {
               <p className="name__lastname">Rodriguez</p>
             </div>
           </div>
+          <NavLink to='/user/editprofile' onClick={this.props.toggleSideNav} className='navlink navlink--first'>Edit Profile</NavLink>
           <NavLink to='/user/dashboard' onClick={this.props.toggleSideNav} className='navlink navlink--first'>Dashboard</NavLink>
           <NavLink to='/user/events' onClick={this.props.toggleSideNav} className='navlink'>Events</NavLink>
           <NavLink to='/user/reports' onClick={this.props.toggleSideNav} className='navlink'>Reports</NavLink>

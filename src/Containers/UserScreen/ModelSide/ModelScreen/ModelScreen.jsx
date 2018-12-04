@@ -8,6 +8,7 @@ import Events from '../Events/Events';
 import MobileFooter from '../MobileFooter/MobileFooter.jsx';
 import Reports from '../Reports/Reports';
 import Wallet from '../Wallet/Wallet';
+import EditProfile from '../EditProfile/EditProfile';
 
 export default class ModelScreen extends Component {
 
@@ -26,9 +27,12 @@ export default class ModelScreen extends Component {
         <Route
             path='/user/wallet'
             component={Wallet} />
-        <Route
+        <Route 
+            path='/user/editprofile'
+            component={EditProfile} />
+        {/* <Route
             path='/user/'
-            component={MobileFooter} />
+            component={MobileFooter} /> */}
       </div>
     )
   }

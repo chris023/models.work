@@ -6,8 +6,13 @@
   overflow: hidden;
 }
 
-//Utilities
+//Globals
 
+Button {
+  cursor: pointer;
+}
+
+//Utilities
 .flex-center {
   display: flex;
   align-items: center;

@@ -5,25 +5,23 @@ class Reports extends Component {
 
   render() {
     return (
-      <div className="user-screen-model-reports">
-        <section className="user-screen-model-reports-main-content-container">
-          <div className="user-screen-model-reports-report-card">
-            <div className="user-screen-model-reports-report-card-header">
-              <div className="user-screen-model-reports-report-card-header-info-container">
-                <p className="user-screen-model-reports-report-card-header-info-location">Miami Beach</p>
-                <p className="user-screen-model-reports-report-card-header-info-type">Brand Ambassador</p>
-              </div>
-              <div className="user-screen-model-reports-report-card-header-date-time-container">
-                <p className="user-screen-model-reports-report-card-header-date">December 20, 2029</p>
-                <p className="user-screen-model-reports-report-card-header-time">2:00 - 8:00</p>
-              </div>
-            </div>
-            <div className="user-screen-model-report-card-info-container">
-              <h1 className="user-screen-model-report-card-info-payment">$14.00 Pending!</h1>
-              <button className="user-screen-model-report-card-submit">Submit</button>
-            </div>
+      <div className="Reports">
+        <div className="header">
+          <div className="header_top">
+            <p className="">Miami Beach</p>
+            <p className="header_top__right">December 20, 2029</p>
+            <p className="">Brand Ambassador</p>
+            <p className="header_top__right">2:00pm - 8:00pm</p>
           </div>
-        </section>
+          <div className="seperator"></div>
+          <div className="header_bottom">
+            <p className="">$14.00 Pending!</p>
+            <button className="header_bottom__button">Submit</button>
+          </div>
+        </div>
+        <div className="Report">
+
+        </div>
       </div>
     )
   }

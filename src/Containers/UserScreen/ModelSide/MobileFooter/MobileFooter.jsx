@@ -7,23 +7,23 @@ class MobileFooter extends Component {
     super();
 
     this.state = {
-      toggeled: false
+      toggleSubMenu: false
     }
   }
 
-  handleCLick = toggeled => {
+  handleCLick = toggleSubMenu => {
     this.setState({
-      toggeled
+      toggleSubMenu
     })
   }
 
-  renderEventType = () => {
-    if (this.state.toggeled) {
+  renderEventSubMenu = () => {
+    if (this.state.toggleSubMenu) {
       return (
-        <div>
-          <NavLink to="/user/events">Events</NavLink>
-          <NavLink to="/user/events">Events</NavLink>
-          <NavLink to="/user/events">Events</NavLink>
+        <div className="sub_menu">
+          <NavLink className="flex-center nav_element" to="/user/events">Events</NavLink>
+          <NavLink className="flex-center nav_element" to="/user/events">Events</NavLink>
+          <NavLink className="flex-center nav_element" to="/user/events">Events</NavLink>
         </div>
       )
     }
@@ -33,11 +33,11 @@ class MobileFooter extends Component {
     return (
       <div className="MobileFooter">
         <div onBlur={() => this.handleCLick(false)}>
-          {this.renderEventType()}
-          <button onClick={() => this.handleCLick(!this.state.toggeled)}>Events</button>
+          {this.renderEventSubMenu()}
+          <button className="flex-center-col nav_element" onClick={() => this.handleCLick(!this.state.toggleSubMenu)}>Events</button>
         </div>
-        <NavLink to="/user/dashboard">Dashboard</NavLink>
-        <NavLink to="/user/reports">Reports</NavLink>
+        <NavLink className="flex-center-col nav_element dashboard" to="/user/dashboard">Dashboard</NavLink>
+        <NavLink className="flex-center-col nav_element reports" to="/user/reports">Reports</NavLink>
       </div>
     )
   }

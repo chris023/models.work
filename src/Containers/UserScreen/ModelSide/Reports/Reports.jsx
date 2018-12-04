@@ -54,6 +54,7 @@ class Reports extends Component {
             <p className="question__text">What was consumers feedback on the product (neat)?</p>
             <textarea className="question__textarea"/>
           </div>
+          <div className="mobile-footer-filler"></div>
         </div>
       </div>
     )

@@ -5,6 +5,10 @@ $mobileLandingHeaderHeight: 100px;
   width: 100%;
 
   .landing_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
     height: $mobileLandingHeaderHeight;
     box-sizing: border-box;
 
@@ -31,6 +35,10 @@ $mobileLandingHeaderHeight: 100px;
     grid-template-columns: repeat(3, 1fr);
     height: $mobileAppHeaderHeight;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+
     &__title {
       text-align: center;
     }
@@ -49,4 +57,14 @@ $mobileLandingHeaderHeight: 100px;
       cursor: pointer;
     }
   }
+}
+
+.mobile_header_filler--landing {
+  height: $mobileLandingHeaderHeight;
+  width: 100%;
+}
+
+.mobile_header_filler--app {
+  height: $mobileAppHeaderHeight;
+  width: 100%;
 }

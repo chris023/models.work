@@ -14,6 +14,7 @@ import { login } from '../../Redux/Actions/index';
 
 import './App.scss';
 import { connect } from 'react-redux';
+import ClientScreen from '../../Containers/UserScreen/ClientSide/ClientScreen/ClientScreen';
 
 class App extends Component {
   constructor(props) {
@@ -63,6 +64,9 @@ class App extends Component {
           <ProtectedRoute
             path='/eventForm'
             component={EventForm} />
+          <ProtectedRoute
+            path='/user/client'
+            component={ClientScreen} />
           <ProtectedRoute
             path='/user'
             component={ModelScreen} />

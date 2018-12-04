@@ -23,12 +23,6 @@
       }
     }
 
-    .seperator {
-      height: 1px;
-      width: 100%;
-      background: #000;
-    }
-
     &_bottom {
       display: flex;
       align-items: center;
@@ -40,6 +34,65 @@
         background: #fff;
         border: solid 1px #000;
         border-radius: 3px;
+      }
+    }
+  }
+
+  .report {
+    border: solid 1px #000;
+
+    .units_sold {
+
+      .product {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+
+        margin: 10px 0;
+
+        &__name {
+          font-size: 12px;
+          max-width: 50%;
+        }
+
+        &__input_container {
+          display: flex;
+          align-items: flex-end;
+
+          p {
+            margin: 0;
+          }
+        }
+
+        &__input {
+            width: 50px;
+            height: 40px;
+        }
+      }
+    }
+
+    .grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .question {
+
+      &-oneline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        p {
+          margin: 0;
+        }
+      }
+
+      &__input {
+        &-small {
+            width: 50px;
+            height: 40px;
+        }
       }
     }
   }

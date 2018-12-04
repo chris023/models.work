@@ -26,6 +26,9 @@ export default class ModelScreen extends Component {
         <Route
             path='/user/wallet'
             component={Wallet} />
+        <Route 
+            path='/user/editprofile'
+            component={EditProfile} />
         <Route
             path='/user/'
             component={MobileFooter} />

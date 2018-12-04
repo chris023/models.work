@@ -5,31 +5,27 @@ class Events extends Component {
 
   render() {
     return (
-      <div className="user-screen-model-events">
-        <header className="user-screen-model-events-header">
-          <input type="text" placeholder="Search"/>
-          <button>SearchGlass</button>
+      <div className="Events">
+        <header className="search">
+          <input className="search__input" type="text" placeholder="Search"/>
+          <button className="search__button">Search</button>
         </header>
-        <section className="user-screen-model-events-main-content-container">
-          <div className="user-screen-model-events-event-card">
-            <div className="user-screen-model-events-event-card-header">
-              <div className="user-screen-model-events-event-card-header-info-container">
-                <p className="user-screen-model-events-event-card-header-info-location">Miami Beach</p>
-                <p className="user-screen-model-events-event-card-header-info-type">Brand Ambassador</p>
-              </div>
-              <div className="user-screen-model-events-event-card-header-date-time-container">
-                <p className="user-screen-model-events-event-card-header-date">December 20, 2029</p>
-                <p className="user-screen-model-events-event-card-header-time">2:00 - 8:00</p>
-              </div>
+        <section className="content">
+          <div className="event_card">
+            <div className="card_header">
+              <p className="card_header__location">Miami Beach</p>
+              <p className="card_header__date">December 20, 2029</p>
+              <p className="card_header__role">Brand Ambassador</p>
+              <p className="card_header__time">2:00 - 8:00</p>
             </div>
-            <div className="user-screen-model-event-card-info-container">
-              <div className="user-screen-model-event-card-info-application-status-container">
-                <p className="user-screen-model-event-card-info-application-status-text">POSITIONS AVAILABLE</p>
-                <h2 className="user-screen-model-event-card-info-application-status-number">5</h2>
+            <div className="card_seperator"></div>
+            <div className="card_footer">
+              <div className="card_footer__pos_available">
+                <p className="amount">5</p>
+                <p>POSITIONS AVAILABLE</p>
               </div>
-              <div className="user-screen-model-event-card-info-payment-container">
-                <h1 className="user-screen-model-event-card-info-payment">$14</h1>
-                <p className="user-screen-model-event-card-info-payment-rate">/hr</p>
+              <div className="card_footer__hourly_rate">
+                <p><span class="rate">$14</span>/hr</p>
               </div>
             </div>
           </div>

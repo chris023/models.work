@@ -1,0 +1,61 @@
+.Wallet {
+  padding: 20px;
+  height: 100%;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__title {
+      font-size: 32px;
+      margin: 0;
+    }
+    
+
+    .settings_button {
+      padding: 5px 10px;
+
+      border: solid 1px #000;
+      border-radius: 3px;
+
+      font-size: 22px;
+
+      background: #fff;
+    }
+  }
+
+  .content {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    margin: 20px 0;
+
+    background: #ddd;
+    border-radius: 3px;
+
+    font-size: 28px;
+    text-align: center;
+
+    &__balance {
+      font-size: 58px;
+    }
+
+    &__button {
+      margin: 0 auto;
+      padding: 5px 10px;
+
+      font-size: 24px;
+
+      background: none;
+      border: solid 1px #000;
+      border-radius: 3px;
+    }
+
+    &__bank_status {
+      font-size: 18px;
+    }
+  }
+}

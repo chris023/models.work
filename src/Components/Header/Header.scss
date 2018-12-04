@@ -5,7 +5,12 @@ $mobileLandingHeaderHeight: 100px;
   width: 100%;
 
   .landing_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
     height: $mobileLandingHeaderHeight;
+    width: 100%;
     box-sizing: border-box;
 
     display: flex;
@@ -30,6 +35,14 @@ $mobileLandingHeaderHeight: 100px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     height: $mobileAppHeaderHeight;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    background: #fff;
 
     &__title {
       text-align: center;
@@ -38,11 +51,25 @@ $mobileLandingHeaderHeight: 100px;
     &__nav {
       display: flex;
       align-items: center;
+
       box-sizing: border-box;
       margin: 0;
       margin-left: 10px;
+
       width: 100%;
       height: 100%;
+
+      cursor: pointer;
     }
   }
+}
+
+.mobile_header_filler--landing {
+  height: $mobileLandingHeaderHeight;
+  width: 100%;
+}
+
+.mobile_header_filler--app {
+  height: $mobileAppHeaderHeight;
+  width: 100%;
 }

@@ -55,6 +55,8 @@ class Login extends Component {
                 <p className="login-option" onClick={() => this.setType('social')}>I'll Use Social Instead</p>
               </form>
             )
+          default:
+            return;
         }
       case 'signup':
         switch (this.state.loginType) {
@@ -77,9 +79,11 @@ class Login extends Component {
                 <p className="login-option" onClick={() => this.setType('social')}>I'll Use Social Instead</p>
               </form>
             )
+          default:
+            return;
         }
       default:
-        return <p>System Error</p>
+        return;
     }
   }
 

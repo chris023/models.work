@@ -30,9 +30,9 @@ export default class ModelScreen extends Component {
         <Route 
             path='/user/editprofile'
             component={EditProfile} />
-        {/* <Route
+        <Route
             path='/user/'
-            component={MobileFooter} /> */}
+            component={MobileFooter} />
       </div>
     )
   }

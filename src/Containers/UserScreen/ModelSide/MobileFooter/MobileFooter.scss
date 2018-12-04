@@ -1,5 +1,7 @@
+$mobileFooterHeight: 40px;
+
 .MobileFooter {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 99;
@@ -7,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  height: 40px;
+  height: $mobileFooterHeight;
   width: 100%;
 
   .nav_element {
@@ -33,4 +35,9 @@
     left: 0;
     bottom: 40px;
   }
+}
+
+.mobile-footer-filler {
+  height: $mobileFooterHeight;
+  width: 100%;
 }

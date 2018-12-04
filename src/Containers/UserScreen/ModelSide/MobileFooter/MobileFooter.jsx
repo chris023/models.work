@@ -37,7 +37,7 @@ class MobileFooter extends Component {
           <button className="flex-center-col nav_element" onClick={() => this.handleCLick(!this.state.toggleSubMenu)}>Events</button>
         </div>
         <NavLink className="flex-center-col nav_element dashboard" to="/user/dashboard">Dashboard</NavLink>
-        <NavLink className="flex-center-col nav_element reports" to="/user/reports">Reports</NavLink>
+        <NavLink className="flex-center-col nav_element reports" to="/user/wallet">Wallet</NavLink>
       </div>
     )
   }

@@ -25,7 +25,7 @@ class Events extends Component {
                 <p>POSITIONS AVAILABLE</p>
               </div>
               <div className="card_footer__hourly_rate">
-                <p><span class="rate">$14</span>/hr</p>
+                <p><span className="rate">$14</span>/hr</p>
               </div>
             </div>
           </div>

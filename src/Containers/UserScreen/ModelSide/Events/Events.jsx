@@ -1,7 +1,51 @@
 import React, { Component } from 'react';
 import './Events.scss';
+import { connect } from 'react-redux';
+
+import { getEvents } from '../../../../Helpers/apiCalls/index';
+import { addEvents } from '../../../../Redux/Actions/index';
 
 class Events extends Component {
+
+  async componentDidMount() {
+    if (!this.props.events.length) {
+      const events = await getEvents();
+      this.props.addEvents(events)
+    }
+  }
+
+  renderEvents = () => {
+    if (this.props.events.length) {
+      return this.props.events.map( event => {
+        const eventData = Object.values(event)
+        const { location, date, time, role, availability, pay} = eventData[0]
+        return (
+          <div className="event_card">
+            <div className="card_header">
+              <p className="card_header__location">{location}</p>
+              <p className="card_header__date">{date}</p>
+              <p className="card_header__role">{role}</p>
+              <p className="card_header__time">{time}</p>
+            </div>
+            <div className="card_seperator"></div>
+            <div className="card_footer">
+              <div className="card_footer__pos_available">
+                <p className="amount">{availability}</p>
+                <p>POSITIONS AVAILABLE</p>
+              </div>
+              <div className="card_footer__hourly_rate">
+                <p><span class="rate">${pay}</span>/hr</p>
+              </div>
+            </div>
+          </div>
+        )
+      })
+    } else {
+      return (
+        <h2>LOADING.....</h2>
+      )
+    }
+  }
 
   render() {
     return (
@@ -11,28 +55,19 @@ class Events extends Component {
           <button className="search__button">Search</button>
         </header>
         <section className="content">
-          <div className="event_card">
-            <div className="card_header">
-              <p className="card_header__location">Miami Beach</p>
-              <p className="card_header__date">December 20, 2029</p>
-              <p className="card_header__role">Brand Ambassador</p>
-              <p className="card_header__time">2:00 - 8:00</p>
-            </div>
-            <div className="card_seperator"></div>
-            <div className="card_footer">
-              <div className="card_footer__pos_available">
-                <p className="amount">5</p>
-                <p>POSITIONS AVAILABLE</p>
-              </div>
-              <div className="card_footer__hourly_rate">
-                <p><span class="rate">$14</span>/hr</p>
-              </div>
-            </div>
-          </div>
+          {this.renderEvents()}
         </section>
       </div>
     )
   }
 }
 
-export default Events;
+const mapStateToProps = state => ({
+  events: state.events
+});
+
+const mapDispatchToProps = dispatch => ({
+  addEvents: events => dispatch(addEvents(events))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Events);

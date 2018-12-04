@@ -11,7 +11,7 @@ export default class Sidedrawer extends Component {
         <div class="top_container">
           <div className="flex-center profile">
             <p className="profile__image">Img</p>
-            <div class="name">
+            <div className="name">
               <p className="name__firstname">Antoinette</p>
               <p className="name__lastname">Rodriguez</p>
             </div>

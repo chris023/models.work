@@ -7,3 +7,8 @@ export const login = (user, authenticated) => ({
 export const logout = () => ({
   type: 'LOGOUT'
 });
+
+export const addEvents = events => ({
+  type: 'ADDEVENTS',
+  events
+});

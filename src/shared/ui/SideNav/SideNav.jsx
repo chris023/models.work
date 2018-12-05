@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import './Sidedrawer.scss';
+import './SideNav.scss';
 
 import { NavLink } from 'react-router-dom';
 
-export default class Sidedrawer extends Component {
+export default class SideNav extends Component {
 
   render() {
     return (
-      <div className="Sidedrawer">
+      <div className="SideNav">
         <div className="top_container">
           <div className="flex-center profile">
             <p className="profile__image">Img</p>

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Events.scss';
 import { connect } from 'react-redux';
 
-import { getEvents } from '../../../../Helpers/apiCalls/index';
-import { addEvents } from '../../../../Redux/Actions/index';
+import { getEvents } from '../../shared/firebase/api/index';
+import { addEvents } from '../../shared/redux/actions/index';
 
 class Events extends Component {
 

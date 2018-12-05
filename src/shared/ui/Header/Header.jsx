@@ -4,7 +4,7 @@ import { NavLink, Route } from 'react-router-dom';
 import './Header.scss';
 import { connect } from 'react-redux';
 
-import Sidedrawer from '../../Containers/UserScreen/ModelSide/Sidedrawer/Sidedrawer';
+import SideNav from '../SideNav/SideNav';
 
 class Header extends Component {
 
@@ -42,7 +42,7 @@ class Header extends Component {
           <p className="app_header__title">Models.work</p>
           {
             this.state.showSideNav &&
-            <Sidedrawer toggleSideNav={this.toggleSideNav} />
+            <SideNav toggleSideNav={this.toggleSideNav} />
           }
         </div>
         <div className="mobile_header_filler--app"></div>

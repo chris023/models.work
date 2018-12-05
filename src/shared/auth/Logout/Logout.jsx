@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { app } from '../../firebase';
+import { app } from '../../firebase/config/firebase';
 import { connect } from 'react-redux';
-import { logout } from '../../Redux/Actions';
+import { logout } from '../../redux/actions';
 
 class Logout extends Component {
   constructor(props) {

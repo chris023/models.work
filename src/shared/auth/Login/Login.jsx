@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import { app, googleProvider } from '../../firebase';
-import { login, logout } from '../../Redux/Actions/index';
+import { app, googleProvider } from '../../firebase/config/firebase';
+import { login, logout } from '../../redux/actions/index';
 
 import './Login.scss';
 import { Redirect } from 'react-router-dom';

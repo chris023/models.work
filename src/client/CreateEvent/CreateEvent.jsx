@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { db } from '../../../../firebase';
-import { Calendar } from 'react-calendar';
+import { db } from '../../shared/firebase/config/firebase';
 
 import './CreateEvent.scss';
 

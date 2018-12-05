@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Dashboard.scss';
-import { Calendar } from 'react-calendar';
+import Calendar from '../../shared/ui/Calendar/Calendar';
 
 class Dashboard extends Component {
 

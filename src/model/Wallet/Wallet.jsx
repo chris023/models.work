@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Wallet.scss';
+import { NavLink } from 'react-router-dom';
 
 class Wallet extends Component {
 
@@ -8,7 +9,7 @@ class Wallet extends Component {
       <div className="Wallet">
         <div className="header">
           <h2 className="header__title">Wallet</h2>
-          <button className="settings_button">Settings</button>
+          <NavLink to="/user/wallet/settings" className="settings_navlink">Settings</NavLink>
         </div>
         <div className="content">
           <p className="margin_0">You have</p>
@@ -22,7 +23,6 @@ class Wallet extends Component {
           </div>
         </div>
       </div>
-      
     )
   }
 }

@@ -1,4 +1,4 @@
-.Wallet {
+.WalletSettings {
   padding: 20px;
   height: 100%;
 
@@ -13,7 +13,7 @@
     }
     
 
-    .settings_navlink {
+    .back_navlink {
       padding: 5px 10px;
 
       color: #000;
@@ -35,22 +35,30 @@
     grid-template-columns: 1fr;
 
     margin: 20px 0;
+    padding: 10px;
+    box-sizing: border-box;
 
     background: #ddd;
     border-radius: 3px;
 
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
 
-    &__balance {
-      font-size: 58px;
+    &__account {
+      font-size: 18px;
+    }
+
+    &__connect {
+      text-align: left;
     }
 
     &__button {
-      margin: 0 auto;
+      margin: 10px auto;
       padding: 5px 10px;
 
-      font-size: 24px;
+      width: 80%;
+
+      font-size: 22px;
 
       background: none;
       border: solid 1px #000;

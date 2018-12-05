@@ -21,11 +21,12 @@ export default class CreateEvent extends Component {
       employeeNumber: '',
       employeeAttire: '',
       employeeTask: '',
+      employeePay: '',
       eventNotes: '',
     }
   }
 
-  handleCalendarSelection = eventDate => this.setState({ eventDate });
+  handleCalendarSelection = eventDate => this.setState({ eventDate: eventDate.target.value });
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -34,7 +35,6 @@ export default class CreateEvent extends Component {
 
   addEvent = () => {
     const data = this.state;
-    console.log('here');
     db.collection("events").add(data)
       .then(function () {
         console.log("Document successfully written!");
@@ -42,7 +42,6 @@ export default class CreateEvent extends Component {
       .catch(function (error) {
         console.error("Error writing document: ", error);
       });
-    console.log('here2');
   }
 
   render() {
@@ -95,7 +94,7 @@ export default class CreateEvent extends Component {
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
-              <input className="staff__rate" name='employeeNumber' type="number" min='1' placeholder='Hourly Rate' onChange={this.handleInputChange} />
+              <input className="staff__rate" name='employeePay' type="number" min='1' placeholder='Hourly Rate' onChange={this.handleInputChange} />
               <input className="staff__number_to_hire" name='employeeNumber' type="number" min='1' placeholder='Number of Talent' onChange={this.handleInputChange} />
               <input className="staff__attire" name='employeeAttire' type="text" placeholder='Attire' onChange={this.handleInputChange} />
               <input className="staff__notes" name='employeeNotes' type="text" placeholder='Notes' onChange={this.handleInputChange} />

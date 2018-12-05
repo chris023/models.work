@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import './ClientScreen.scss';
+import './Screen.scss';
 import { Route } from 'react-router-dom';
 
-//Components
-import MobileFooter from '../../ModelSide/MobileFooter/MobileFooter.jsx';
+import MobileFooter from '../../shared/ui/MobileFooter/MobileFooter';
 import CreateEvent from '../CreateEvent/CreateEvent';
 
-export default class ClientScreen extends Component {
+export default class Screen extends Component {
 
   render() {
     return (

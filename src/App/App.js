@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
-
-import Header from '../Header/Header';
-import LandingPage from '../LandingPage/LandingPage.jsx';
-import Login from '../../Containers/Login/Login';
-import Logout from '../../Containers/Logout/Logout';
-import EventForm from '../EventForm/EventForm';
-import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-import OnboardingScreen from '../../Containers/Onboarding/OnboaringMain/OnboardingScreen/OnboardingScreen';
-import ModelScreen from '../../Containers/UserScreen/ModelSide/ModelScreen/ModelScreen';
-
-import { login } from '../../Redux/Actions/index';
+import { connect } from 'react-redux';
 
 import './App.scss';
-import { connect } from 'react-redux';
-import ClientScreen from '../../Containers/UserScreen/ClientSide/ClientScreen/ClientScreen';
+
+import { login } from '../shared/redux/actions/index';
+
+import Header from '../shared/ui/Header/Header';
+import LandingPage from '../shared/landing/LandingPage/LandingPage';
+import Login from '../shared/auth/Login/Login';
+import Logout from '../shared/auth/Logout/Logout';
+import ProtectedRoute from '../shared/utils/ProtectedRoute/ProtectedRoute';
+import OnboardingScreen from '../shared/auth/Onboarding/OnboaringMain/OnboardingScreen/OnboardingScreen';
+import ModelScreen from '../model/Screen/Screen';
+import ClientScreen from '../client/Screen/Screen';
+
+
+
 
 class App extends Component {
   constructor(props) {
@@ -61,9 +63,6 @@ class App extends Component {
           <Route
             path='/logout'
             component={Logout} />
-          <ProtectedRoute
-            path='/eventForm'
-            component={EventForm} />
           <ProtectedRoute
             path='/user/client'
             component={ClientScreen} />

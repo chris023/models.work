@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Dashboard.scss';
+import { Calendar } from 'react-calendar';
 
 class Dashboard extends Component {
 
@@ -25,7 +26,7 @@ class Dashboard extends Component {
             <p className="subheader__text">Calendar</p>
             <button className="subheader__my_events">My Events</button>
         </div>
-        <p>CALENDAR FILLER</p>
+        <Calendar />
       </div>
     )
   }

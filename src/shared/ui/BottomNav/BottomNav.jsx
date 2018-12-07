@@ -28,7 +28,7 @@ const styles = {
 class BottomNav extends Component {
 
   paths = [
-    '/user/',
+    '/user/events',
     '/user/dashboard',
     '/user/wallet'
   ]

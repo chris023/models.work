@@ -11,13 +11,11 @@ import {
 }
   from '@material-ui/core';
 
-const styles = theme => {
-  return {
-    appBar: {
-      zIndex: theme.zIndex.modal + 1,
-    }
+const styles = theme => ({
+  appBar: {
+    zIndex: theme.zIndex.modal + 1,
   }
-}
+});
 
 class TopAppBar extends Component {
 
@@ -37,9 +35,7 @@ class TopAppBar extends Component {
 
     return (
       <Fragment>
-        { drawerOpen &&
-          <Drawer open={drawerOpen} toggleDrawer={this.toggleDrawer} />
-        }
+        <Drawer open={drawerOpen} toggleDrawer={this.toggleDrawer} />
         <AppBar
           position="relative"
           className={classes.appBar}
@@ -60,4 +56,4 @@ class TopAppBar extends Component {
 
 export default compose(
   withStyles(styles),
-) (TopAppBar);
+)(TopAppBar);

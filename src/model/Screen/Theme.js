@@ -8,8 +8,6 @@ const theme = createMuiTheme({
 
 theme.palette.primary.main = pink[400];
 
-console.log(theme);
-
 export {
-  theme
+  theme,
 }

@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
+
 import {
   BottomNavigation,
   BottomNavigationAction
 } from '@material-ui/core/';
+
 import {
   Event as EventIcon,
   Dashboard as DashboardIcon,
   AccountBalanceWallet as WalletIcon,
 } from '@material-ui/icons';
+
+
+
 
 const styles = {
   bottomNavigation: {
@@ -40,9 +46,24 @@ export default withStyles(styles)(class extends Component {
         showLabels
         className={classes.bottomNavigation}
       >
-        <BottomNavigationAction label="Events" icon={<EventIcon />} />
-        <BottomNavigationAction label="Dashboard" icon={<DashboardIcon />} />
-        <BottomNavigationAction label="Wallet" icon={<WalletIcon />} />
+        <BottomNavigationAction
+          label="Events"
+          icon={<EventIcon />}
+          component={Link}
+          to='/user/events'
+        />
+        <BottomNavigationAction
+          label="Dashboard"
+          icon={<DashboardIcon />}
+          component={Link}
+          to='/user/dashboard'
+        />
+        <BottomNavigationAction
+          label="Wallet"
+          icon={<WalletIcon />}
+          component={Link}
+          to='/user/wallet'
+        />
       </BottomNavigation>
     );
   }

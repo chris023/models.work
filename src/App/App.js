@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
 import './App.scss';
 
 import { login } from '../shared/redux/actions/index';
 
-import Header from '../shared/ui/Header/Header';
 import LandingPage from '../shared/landing/LandingPage/LandingPage';
 import Login from '../shared/auth/Login/Login';
 import Logout from '../shared/auth/Logout/Logout';
@@ -83,4 +83,7 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(login(user, !!user)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default compose(
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps)
+)(App);

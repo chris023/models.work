@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { compose } from 'recompose';
@@ -8,7 +8,6 @@ import {
   ListItem,
   ListItemText,
   Divider,
-  Button,
   SwipeableDrawer,
   ListItemIcon,
 } from '@material-ui/core';
@@ -28,18 +27,9 @@ const styles = theme => ({
 });
 
 class SwipeableTemporaryDrawer extends Component {
-  state = {
-    open: false,
-  };
-
-  toggleDrawer = () => {
-    this.setState((state) => ({
-      open: !state.open,
-    }));
-  };
 
   render() {
-    const { classes } = this.props;
+    const { classes, open, toggleDrawer } = this.props;
 
     const list = [
       {
@@ -65,43 +55,40 @@ class SwipeableTemporaryDrawer extends Component {
     ]
 
     return (
-      <Fragment>
-        <Button onClick={this.toggleDrawer}>Open</Button>
-        <SwipeableDrawer
-          open={this.state.open}
-          onClose={this.toggleDrawer}
-          onOpen={this.toggleDrawer}
+      <SwipeableDrawer
+        open={open}
+        onClose={toggleDrawer}
+        onOpen={toggleDrawer}
+      >
+        <div
+          tabIndex={0}
+          role="button"
+          onClick={toggleDrawer}
+          onKeyDown={toggleDrawer}
         >
-          <div
-            tabIndex={0}
-            role="button"
-            onClick={this.toggleDrawer}
-            onKeyDown={this.toggleDrawer}
-          >
-            <div className={classes.topAppBarSpacer}></div>
-            <List>
-              {list.map(({ text, linkTo }, index) => (
-                  <ListItem
-                  key={index}
-                  button
-                  component={Link}
-                  to={linkTo}
-                  >
-                    <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                    <ListItemText primary={text} />
-                  </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-              <ListItem button>
-                <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                <ListItemText primary='Sign Out' />
-              </ListItem>
-            </List>
-          </div>
-        </SwipeableDrawer>
-      </Fragment>
+          <div className={classes.topAppBarSpacer}></div>
+          <List>
+            {list.map(({ text, linkTo }, index) => (
+                <ListItem
+                key={index}
+                button
+                component={Link}
+                to={linkTo}
+                >
+                  <ListItemIcon>{<MailIcon />}</ListItemIcon>
+                  <ListItemText primary={text} />
+                </ListItem>
+              ))}
+          </List>
+          <Divider />
+          <List>
+            <ListItem button>
+              <ListItemIcon>{<MailIcon />}</ListItemIcon>
+              <ListItemText primary='Sign Out' />
+            </ListItem>
+          </List>
+        </div>
+      </SwipeableDrawer>
     );
   }
 }

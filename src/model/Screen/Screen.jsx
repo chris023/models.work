@@ -13,7 +13,6 @@ import EditProfile from '../EditProfile/EditProfile';
 import {
     BottomNav,
     TopAppBar,
-    Drawer
 } from '../../shared/ui';
 
 export default class Screen extends Component {
@@ -24,9 +23,6 @@ export default class Screen extends Component {
         <Route
             path='/user/'
             component={TopAppBar} />
-        <Route
-            path='/user/'
-            component={Drawer} />
         <Route
             exact path='/user/dashboard'
             component={Dashboard} />

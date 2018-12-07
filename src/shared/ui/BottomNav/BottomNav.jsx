@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { compose } from 'recompose';
 
 import {
   BottomNavigation,
@@ -24,7 +25,7 @@ const styles = {
   },
 };
 
-export default withStyles(styles)(class extends Component {
+class BottomNav extends Component {
   
   state = {
     value: 0,
@@ -67,4 +68,8 @@ export default withStyles(styles)(class extends Component {
       </BottomNavigation>
     );
   }
-});
+};
+
+export default compose(
+  withStyles(styles)
+)(BottomNav);

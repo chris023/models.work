@@ -17,11 +17,11 @@ const store = createStore(rootReducer, devTools);
 ReactDOM.render(
   <React.Fragment>
     <CssBaseline />
-    <Provider store={store}>
-      <Router>
+    <Router>
+      <Provider store={store}>
         <App />
-      </Router>
-    </Provider>
+      </Provider>
+    </Router>
   </React.Fragment>
 , document.getElementById('root'));
 

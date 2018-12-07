@@ -49,10 +49,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Route
-          path='/'
-          component={Header}
-        />
         <Switch>
           <Route
             exact path='/'

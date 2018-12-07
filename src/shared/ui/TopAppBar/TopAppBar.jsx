@@ -20,19 +20,19 @@ function TopAppBar(props) {
   const { classes } = props;
 
   return (
-      <AppBar
-        position="static"
-        className={classes.appBar}
-      >
-        <Toolbar>
-          <IconButton color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" color="inherit">
-            Models.work
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <AppBar
+      position="static"
+      className={classes.appBar}
+    >
+      <Toolbar>
+        <IconButton color="inherit" aria-label="Menu">
+          <MenuIcon />
+        </IconButton>
+        <Typography variant="h6" color="inherit">
+          Models.work
+        </Typography>
+      </Toolbar>
+    </AppBar>
   );
 }
 

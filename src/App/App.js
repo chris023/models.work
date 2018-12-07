@@ -3,18 +3,14 @@ import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 
-import './App.scss';
-
 import { login } from '../shared/redux/actions/index';
+import { Login, Logout } from '../shared/ui';
+import { Screen as ModelScreen } from '../model';
+import { Screen as ClientScreen } from '../client';
+import { LandingPage } from '../shared/landing';
+import { ProtectedRoute } from '../shared/utils';
 
-import LandingPage from '../shared/landing/LandingPage/LandingPage';
-import Login from '../shared/auth/Login/Login';
-import Logout from '../shared/auth/Logout/Logout';
-import ProtectedRoute from '../shared/utils/ProtectedRoute/ProtectedRoute';
-import OnboardingScreen from '../shared/auth/Onboarding/OnboaringMain/OnboardingScreen/OnboardingScreen';
-import ModelScreen from '../model/Screen/Screen';
-import ClientScreen from '../client/Screen/Screen';
-
+import './App.scss';
 
 
 
@@ -65,9 +61,6 @@ class App extends Component {
           <ProtectedRoute
             path='/user'
             component={ModelScreen} />
-          <ProtectedRoute
-            path='/onboard'
-            component={OnboardingScreen} />
           <Redirect to='/' />
         </Switch>
       </div>

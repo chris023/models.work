@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
-
 import { login } from '../shared/redux/actions/index';
+
 import { Login, Logout } from '../shared/ui';
+import { ProtectedRoute } from '../shared/utils';
 import { Screen as ModelScreen } from '../model';
 import { Screen as ClientScreen } from '../client';
-import { LandingPage } from '../shared/landing';
-import { ProtectedRoute } from '../shared/utils';
+import { Screen as LandingScreen } from '../shared/landing';
 
 import './App.scss';
 
@@ -48,7 +48,7 @@ class App extends Component {
         <Switch>
           <Route
             exact path='/'
-            component={LandingPage} />
+            component={LandingScreen} />
           <Route
             path='/login'
             component={Login} />

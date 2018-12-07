@@ -82,7 +82,11 @@ class SwipeableTemporaryDrawer extends Component {
           </List>
           <Divider />
           <List>
-            <ListItem button>
+            <ListItem
+              button
+              component={Link}
+              to={'/logout'}
+            >
               <ListItemIcon>{<MailIcon />}</ListItemIcon>
               <ListItemText primary='Sign Out' />
             </ListItem>

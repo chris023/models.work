@@ -16,11 +16,14 @@ class Events extends Component {
 
   renderEvents = () => {
     if (this.props.events.length) {
-      return this.props.events.map( event => {
+
+      return this.props.events.map((event, index) => {
+        
         const eventData = Object.values(event)
-        const { location, date, time, role, availability, pay} = eventData[0]
+        const { location, date, time, role, availability, pay } = eventData[0]
+        
         return (
-          <div className="event_card">
+          <div className="event_card" key={index}>
             <div className="card_header">
               <p className="card_header__location">{location}</p>
               <p className="card_header__date">{date}</p>

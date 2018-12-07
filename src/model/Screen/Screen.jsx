@@ -1,5 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
+import { theme } from './Theme';
+import { MuiThemeProvider } from '@material-ui/core/styles';
 
 //Components
 import {
@@ -20,7 +22,7 @@ export default class Screen extends Component {
 
   render() {
     return (
-        <Fragment>
+        <MuiThemeProvider theme={theme}>
             <Route
                 path='/user/'
                 component={TopAppBar} />
@@ -45,7 +47,7 @@ export default class Screen extends Component {
             <Route
                 path='/user/'
                 component={BottomNav} />
-        </Fragment>
+        </MuiThemeProvider>
     )
   }
 }

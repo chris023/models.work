@@ -17,12 +17,6 @@ import {
 } from '@material-ui/icons';
 
 const styles = theme => ({
-  list: {
-    width: 250,
-  },
-  fullList: {
-    width: 'auto',
-  },
   topAppBarSpacer: theme.mixins.toolbar
 });
 

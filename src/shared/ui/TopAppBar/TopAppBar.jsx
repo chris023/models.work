@@ -22,7 +22,7 @@ const styles = theme => {
 class TopAppBar extends Component {
 
   state = {
-    drawerOpen: true,
+    drawerOpen: false,
   };
 
   toggleDrawer = () => (

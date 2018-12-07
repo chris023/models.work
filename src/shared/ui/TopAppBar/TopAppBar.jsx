@@ -10,18 +10,20 @@ import {
 }
   from '@material-ui/core';
 
-const styles = theme => ({
-  appBar: {
-    zIndex: theme.zIndex.swipeableDrawer + 1,
+const styles = theme => {
+  return {
+    appBar: {
+      zIndex: theme.zIndex.modal + 1,
+    }
   }
-})
+}
 
 function TopAppBar(props) {
   const { classes } = props;
 
   return (
     <AppBar
-      position="static"
+      position="relative"
       className={classes.appBar}
     >
       <Toolbar>

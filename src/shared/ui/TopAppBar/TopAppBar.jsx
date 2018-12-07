@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { compose } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import { Menu as MenuIcon } from '@material-ui/icons';

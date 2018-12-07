@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { PropTypes } from 'prop-types';
+import { Link } from 'react-router-dom';
 import { compose } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -40,6 +41,29 @@ class SwipeableTemporaryDrawer extends Component {
   render() {
     const { classes } = this.props;
 
+    const list = [
+      {
+        text: 'Dashboard',
+        linkTo: '/user/dashboard'
+      },
+      {
+        text: 'Wallet',
+        linkTo: '/user/wallet'
+      },
+      {
+        text: 'Events',
+        linkTo: '/user/events'
+      },
+      {
+        text: 'Profile',
+        linkTo: '/user/profile'
+      },
+      {
+        text: 'Notifications',
+        linkTo: '/user/notifications'
+      },
+    ]
+
     return (
       <Fragment>
         <Button onClick={this.toggleDrawer}>Open</Button>
@@ -56,26 +80,17 @@ class SwipeableTemporaryDrawer extends Component {
           >
             <div className={classes.topAppBarSpacer}></div>
             <List>
-              <ListItem button>
-                <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                <ListItemText primary='Dashboard' />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                <ListItemText primary='Wallet' />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                <ListItemText primary='Events' />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                <ListItemText primary='Profile' />
-              </ListItem>
-              <ListItem button>
-                <ListItemIcon>{<MailIcon />}</ListItemIcon>
-                <ListItemText primary='Notifications' />
-              </ListItem>
+              {list.map(({ text, linkTo }, index) => (
+                  <ListItem
+                  key={index}
+                  button
+                  component={Link}
+                  to={linkTo}
+                  >
+                    <ListItemIcon>{<MailIcon />}</ListItemIcon>
+                    <ListItemText primary={text} />
+                  </ListItem>
+                ))}
             </List>
             <Divider />
             <List>

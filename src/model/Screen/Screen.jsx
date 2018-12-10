@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { theme } from './Theme';
+import { Theme } from '../';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 
 //Components
@@ -22,7 +22,7 @@ export default class Screen extends Component {
 
   render() {
   return (
-    <MuiThemeProvider theme={theme}>
+    <MuiThemeProvider theme={Theme}>
       <Route
         path='/user/'
         component={TopAppBar} />

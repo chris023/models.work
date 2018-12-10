@@ -5,6 +5,7 @@ import Reports from './Reports/Reports';
 import Screen from './Screen/Screen';
 import Wallet from './Wallet/Wallet';
 import WalletSettings from './Wallet/Settings/Settings';
+import Theme from './Screen/Theme.js';
 
 export {
   Dashboard,
@@ -14,4 +15,5 @@ export {
   Screen,
   Wallet,
   WalletSettings,
+  Theme
 }

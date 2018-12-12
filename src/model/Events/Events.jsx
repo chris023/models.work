@@ -11,13 +11,11 @@ import { withStyles } from '@material-ui/core/styles';
 import {
   Card,
   CardHeader,
-  CardMedia,
   CardContent,
-  CardActions,
   Collapse,
   Grid,
-  Avatar,
   IconButton,
+  TextField,
   Typography
 } from '@material-ui/core';
 
@@ -54,6 +52,13 @@ const styles = theme => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
+  footerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
+  textField: {
+    width: "100%",
+  }
 });
 
 
@@ -133,10 +138,13 @@ class Events extends Component {
 
     return (
       <div className="Events">
-        <header className="search">
-          <input className="search__input" type="text" placeholder="Search"/>
-          <button className="search__button">Search</button>
-        </header>
+        <TextField
+          label="Search"
+          type="search"
+          className={classes.textField}
+          margin="normal"
+          variant="outlined"
+        />
         <Grid
           container
           direction="row"
@@ -146,6 +154,7 @@ class Events extends Component {
         >
           {this.renderEvents(classes)}
         </Grid>
+        <div className={classes.footerSpacer}></div>
       </div>
     )
   }

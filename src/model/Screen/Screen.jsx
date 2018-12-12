@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Theme } from '../';
-import { MuiThemeProvider } from '@material-ui/core/styles';
+import { MuiThemeProvider, withStyles } from '@material-ui/core/styles';
+import { compose } from 'recompose';
 
 //Components
 import {
@@ -18,36 +19,50 @@ import {
   TopAppBar,
 } from '../../shared/ui';
 
-export default class Screen extends Component {
+const styles = theme => ({
+  footerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
+});
+
+class Screen extends Component {
 
   render() {
-  return (
-    <MuiThemeProvider theme={Theme}>
-      <Route
+    const { classes } = this.props;
+
+    return (
+      <MuiThemeProvider theme={Theme}>
+        <Route
         path='/user/'
         component={TopAppBar} />
-      <Route
+        <Route
         exact path='/user/dashboard'
         component={Dashboard} />
-      <Route
+        <Route
         exact path='/user/events'
         component={Events} />
-      <Route
+        <Route
         exact path='/user/reports'
         component={Reports} />
-      <Route
+        <Route
         exact path='/user/wallet'
         component={Wallet} />
-      <Route
+        <Route
         exact path='/user/wallet/settings'
         component={WalletSettings} />
-      <Route 
+        <Route 
         exact path='/user/profile/edit'
-          component={EditProfile} />
-      <Route
+        component={EditProfile} />
+        <Route
         path='/user/'
         component={BottomNav} />
-    </MuiThemeProvider>
-  )
+        <div className={classes.footerSpacer}></div>
+      </MuiThemeProvider>
+    )
   }
 }
+
+export default compose(
+  withStyles(styles)
+)(Screen)

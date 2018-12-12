@@ -31,10 +31,6 @@ const styles = theme => ({
   card: {
     maxWidth: 400,
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%', // 16:9
-  },
   actions: {
     display: 'flex',
     alignItems: 'center',
@@ -51,10 +47,6 @@ const styles = theme => ({
   },
   expandOpen: {
     transform: 'rotate(180deg)',
-  },
-  footerSpacer: {
-    height: 56 + theme.spacing.unit,
-    width: '100%',
   },
   textField: {
     width: "100%",
@@ -154,7 +146,6 @@ class Events extends Component {
         >
           {this.renderEvents(classes)}
         </Grid>
-        <div className={classes.footerSpacer}></div>
       </div>
     )
   }

@@ -39,33 +39,33 @@ class Screen extends Component {
     const { classes } = this.props;
 
     return (
-      <div class="Screen" className={classes.Screen}>
+      <div className={classes.Screen}>
         <MuiThemeProvider theme={Theme}>
           <div className={classes.headerSpacer}></div>
           <Route
-          path='/user/'
-          component={TopAppBar} />
+            path='/user/'
+            component={TopAppBar} />
           <Route
-          exact path='/user/dashboard'
-          component={Dashboard} />
+            exact path='/user/dashboard'
+            component={Dashboard} />
           <Route
-          exact path='/user/events'
-          component={Events} />
+            exact path='/user/events'
+            component={Events} />
           <Route
-          exact path='/user/reports'
-          component={Reports} />
+            exact path='/user/reports'
+            component={Reports} />
           <Route
-          exact path='/user/wallet'
-          component={Wallet} />
+            exact path='/user/wallet'
+            component={Wallet} />
           <Route
-          exact path='/user/wallet/settings'
-          component={WalletSettings} />
+            exact path='/user/wallet/settings'
+            component={WalletSettings} />
           <Route 
-          exact path='/user/profile/edit'
-          component={EditProfile} />
+            exact path='/user/profile/edit'
+            component={EditProfile} />
           <Route
-          path='/user/'
-          component={BottomNav} />
+            path='/user/'
+            component={BottomNav} />
           <div className={classes.footerSpacer}></div>
         </MuiThemeProvider>
       </div>

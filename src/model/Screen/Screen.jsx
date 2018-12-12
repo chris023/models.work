@@ -39,12 +39,13 @@ class Screen extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.Screen}>
-        <MuiThemeProvider theme={Theme}>
-          <div className={classes.headerSpacer}></div>
-          <Route
-            path='/user/'
-            component={TopAppBar} />
+     
+      <MuiThemeProvider theme={Theme}>
+        <div className={classes.headerSpacer}></div>
+        <Route
+          path='/user/'
+        component={TopAppBar} />
+        <div className={classes.Screen}>
           <Route
             exact path='/user/dashboard'
             component={Dashboard} />
@@ -63,12 +64,13 @@ class Screen extends Component {
           <Route 
             exact path='/user/profile/edit'
             component={EditProfile} />
-          <Route
-            path='/user/'
-            component={BottomNav} />
-          <div className={classes.footerSpacer}></div>
-        </MuiThemeProvider>
-      </div>
+          </div>
+        <Route
+          path='/user/'
+          component={BottomNav} />
+        <div className={classes.footerSpacer}></div>
+      </MuiThemeProvider>
+      
     )
   }
 }

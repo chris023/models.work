@@ -29,21 +29,21 @@ class Screen extends Component {
     const { classes } = this.props;
 
     return (
-      <div className={classes.Screen}>
-        <MuiThemeProvider theme={Theme}>
-          <div className={classes.headerSpacer}></div>
+      <MuiThemeProvider theme={Theme}>
+        <div className={classes.headerSpacer}></div>
         <Route
           path='/user/client'
           component={TopAppBar} />
-        <Route
-          path='/user/client/events/create'
-            component={CreateEvent} />
+        <div className={classes.Screen}>
+          <Route
+            path='/user/client/events/create'
+              component={CreateEvent} />
+        </div>
         <Route
           path='/user/client'
           component={BottomNav} />
         <div className={classes.footerSpacer}></div>
-        </MuiThemeProvider>
-      </div>
+      </MuiThemeProvider>
     )
   }
 }

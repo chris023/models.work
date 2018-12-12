@@ -24,6 +24,10 @@ const styles = theme => ({
     height: 56 + theme.spacing.unit,
     width: '100%',
   },
+  headerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
 });
 
 class Screen extends Component {
@@ -33,6 +37,7 @@ class Screen extends Component {
 
     return (
       <MuiThemeProvider theme={Theme}>
+        <div className={classes.headerSpacer}></div>
         <Route
         path='/user/'
         component={TopAppBar} />

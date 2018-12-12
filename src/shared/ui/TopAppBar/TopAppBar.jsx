@@ -37,7 +37,7 @@ class TopAppBar extends Component {
       <Fragment>
         <Drawer open={drawerOpen} toggleDrawer={this.toggleDrawer} />
         <AppBar
-          position="relative"
+          position="fixed"
           className={classes.appBar}
         >
           <Toolbar>

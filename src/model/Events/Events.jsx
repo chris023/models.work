@@ -15,6 +15,7 @@ import {
   CardContent,
   CardActions,
   Collapse,
+  Grid,
   Avatar,
   IconButton,
   Typography
@@ -22,12 +23,13 @@ import {
 
 import {
   MoreVert as MoreVertIcon,
-  Favorite as FavoriteIcon,
-  Share as ShareIcon,
   ExpandMore as ExpandMoreIcon,
 } from '@material-ui/icons';
 
 const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
   card: {
     maxWidth: 400,
   },
@@ -37,6 +39,7 @@ const styles = theme => ({
   },
   actions: {
     display: 'flex',
+    alignItems: 'center',
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -78,50 +81,44 @@ class Events extends Component {
         const { location, date, time, role, availability, pay } = eventData[0]
         
         return (
-          <Card className={classes.card} key={index}>
-            <CardHeader
-              action={
-                <IconButton>
-                  <MoreVertIcon />
-                </IconButton>
-              }
-              title={location}
-              subheader={role}
-              
-                         
-            />
-            <CardContent>
-              <Typography component="p">
-                {date}
-              </Typography>
-              <Typography component="p">
-                {time}
-              </Typography>
-            </CardContent>
-            <CardActions className={classes.actions} disableActionSpacing>
-              <IconButton aria-label="Add to favorites">
-                <FavoriteIcon />
-              </IconButton>
-              <IconButton
-                className={classnames(classes.expand, {
-                  [classes.expandOpen]: this.state.expanded,
-                })}
-                onClick={this.handleExpandClick}
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </CardActions>
-            <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-              <CardContent>
-                <Typography>
+          <Grid item xs={12}>
+            <Card className={classes.card} key={index}>
+              <CardHeader
+                action={
+                  <IconButton>
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+                title={role}
+                subheader={`${date}` + `\n` + `${time}`}
+                
+                          
+              />
+              <CardContent className={classes.actions}>
+                <Typography component="p">
                   {availability} Positions Available
                 </Typography>
-                <Typography>
-                  ${pay}/hr
-                </Typography>
+                <IconButton
+                  className={classnames(classes.expand, {
+                    [classes.expandOpen]: this.state.expanded,
+                  })}
+                  onClick={this.handleExpandClick}
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
               </CardContent>
-            </Collapse>
-          </Card>
+              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography>
+                    {availability} Positions Available
+                  </Typography>
+                  <Typography>
+                    ${pay}/hr
+                  </Typography>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
         )
       })
     } else {
@@ -140,9 +137,15 @@ class Events extends Component {
           <input className="search__input" type="text" placeholder="Search"/>
           <button className="search__button">Search</button>
         </header>
-        <section className="content">
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="flex-start"
+          spacing={8}
+        >
           {this.renderEvents(classes)}
-        </section>
+        </Grid>
       </div>
     )
   }

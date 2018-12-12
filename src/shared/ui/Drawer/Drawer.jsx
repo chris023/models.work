@@ -27,18 +27,6 @@ class SwipeableTemporaryDrawer extends Component {
 
     const list = [
       {
-        text: 'Dashboard',
-        linkTo: '/user/dashboard'
-      },
-      {
-        text: 'Wallet',
-        linkTo: '/user/wallet'
-      },
-      {
-        text: 'Events',
-        linkTo: '/user/events'
-      },
-      {
         text: 'Profile',
         linkTo: '/user/profile'
       },

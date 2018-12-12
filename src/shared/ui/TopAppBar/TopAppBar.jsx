@@ -3,21 +3,31 @@ import { compose } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import { Drawer } from '../';
+
+import HeaderLogo from '../../../assets/logos/models.work/logo1.png';
+
 import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
 }
   from '@material-ui/core';
 
-const styles = theme => {
-  return {
-    appBar: {
-      zIndex: theme.zIndex.modal + 1,
-    }
+const styles = theme => ({
+  appBar: {
+    zIndex: theme.zIndex.modal + 1,
+  },
+  headerLogo: {
+    height: 25,
+    filter: 'Invert(1)',
+  },
+  hidden: {
+    visibility: 'hidden',
+  },
+  toolBar: {
+    justifyContent: "space-between"
   }
-}
+});
 
 class TopAppBar extends Component {
 
@@ -37,20 +47,23 @@ class TopAppBar extends Component {
 
     return (
       <Fragment>
-        { drawerOpen &&
-          <Drawer open={drawerOpen} toggleDrawer={this.toggleDrawer} />
-        }
+        <Drawer open={drawerOpen} toggleDrawer={this.toggleDrawer} />
         <AppBar
-          position="relative"
+          position="fixed"
           className={classes.appBar}
         >
-          <Toolbar>
+          <Toolbar className={classes.toolBar}>
             <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit">
-              Models.work
-            </Typography>
+            <img
+              src={HeaderLogo}
+              alt="Models.work"
+              className={classes.headerLogo}
+            />
+            <IconButton className={classes.hidden}>
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </AppBar>
       </Fragment>
@@ -60,4 +73,4 @@ class TopAppBar extends Component {
 
 export default compose(
   withStyles(styles),
-) (TopAppBar);
+)(TopAppBar);

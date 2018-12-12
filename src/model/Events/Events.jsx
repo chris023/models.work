@@ -1,11 +1,63 @@
 import React, { Component } from 'react';
-import './Events.scss';
 import { connect } from 'react-redux';
+import { compose } from 'recompose';
+import classnames from 'classnames';
+import { PropTypes } from 'prop-types';
 
 import { getEvents } from '../../shared/firebase/api/index';
 import { addEvents } from '../../shared/redux/actions/index';
+import { withStyles } from '@material-ui/core/styles';
+import {
+  Card,
+  CardHeader,
+  CardContent,
+  Collapse,
+  Grid,
+  IconButton,
+  TextField,
+  Typography
+} from '@material-ui/core';
+
+import {
+  MoreVert as MoreVertIcon,
+  ExpandMore as ExpandMoreIcon,
+} from '@material-ui/icons';
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  card: {
+    maxWidth: 400,
+  },
+  actions: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  expand: {
+    transform: 'rotate(0deg)',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+    marginLeft: 'auto',
+    [theme.breakpoints.up('sm')]: {
+      marginRight: -8,
+    },
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  textField: {
+    width: "100%",
+    marginTop: theme.spacing.unit,
+    marginBottom: 2 * theme.spacing.unit,
+  }
+});
+
 
 class Events extends Component {
+
+  state = { expanded: false };
 
   async componentDidMount() {
     if (!this.props.events.length) {
@@ -14,7 +66,11 @@ class Events extends Component {
     }
   }
 
-  renderEvents = () => {
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
+
+  renderEvents = (classes) => {
     if (this.props.events.length) {
 
       return this.props.events.map((event, index) => {
@@ -23,24 +79,44 @@ class Events extends Component {
         const { location, date, time, role, availability, pay } = eventData[0]
         
         return (
-          <div className="event_card" key={index}>
-            <div className="card_header">
-              <p className="card_header__location">{location}</p>
-              <p className="card_header__date">{date}</p>
-              <p className="card_header__role">{role}</p>
-              <p className="card_header__time">{time}</p>
-            </div>
-            <div className="card_seperator"></div>
-            <div className="card_footer">
-              <div className="card_footer__pos_available">
-                <p className="amount">{availability}</p>
-                <p>POSITIONS AVAILABLE</p>
-              </div>
-              <div className="card_footer__hourly_rate">
-                <p><span className="rate">${pay}</span>/hr</p>
-              </div>
-            </div>
-          </div>
+          <Grid item xs={12} key={index}>
+            <Card className={classes.card}>
+              <CardHeader
+                action={
+                  <IconButton>
+                    <MoreVertIcon />
+                  </IconButton>
+                }
+                title={role}
+                subheader={`${date}` + `\n` + `${time}`}
+                
+                          
+              />
+              <CardContent className={classes.actions}>
+                <Typography component="p">
+                  {availability} Positions Available
+                </Typography>
+                <IconButton
+                  className={classnames(classes.expand, {
+                    [classes.expandOpen]: this.state.expanded,
+                  })}
+                  onClick={this.handleExpandClick}
+                >
+                  <ExpandMoreIcon />
+                </IconButton>
+              </CardContent>
+              <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                <CardContent>
+                  <Typography>
+                    {availability} Positions Available
+                  </Typography>
+                  <Typography>
+                    ${pay}/hr
+                  </Typography>
+                </CardContent>
+              </Collapse>
+            </Card>
+          </Grid>
         )
       })
     } else {
@@ -51,19 +127,33 @@ class Events extends Component {
   }
 
   render() {
+    const { classes } = this.props;
+
     return (
       <div className="Events">
-        <header className="search">
-          <input className="search__input" type="text" placeholder="Search"/>
-          <button className="search__button">Search</button>
-        </header>
-        <section className="content">
-          {this.renderEvents()}
-        </section>
+        <TextField
+          label="Search"
+          type="search"
+          className={classes.textField}
+          variant="outlined"
+        />
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="flex-start"
+          spacing={8}
+        >
+          {this.renderEvents(classes)}
+        </Grid>
       </div>
     )
   }
 }
+
+Events.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 const mapStateToProps = state => ({
   events: state.events
@@ -73,4 +163,7 @@ const mapDispatchToProps = dispatch => ({
   addEvents: events => dispatch(addEvents(events))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Events);
+export default compose(
+  withStyles(styles),
+  connect(mapStateToProps, mapDispatchToProps)
+)(Events);

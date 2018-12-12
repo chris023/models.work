@@ -26,24 +26,26 @@ const styles = {
 };
 
 class BottomNav extends Component {
-  
-  state = {
-    value: 0,
-  };
 
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
+  paths = [
+    '/user/events',
+    '/user/dashboard',
+    '/user/wallet'
+  ]
 
 
   render() {
-    const { classes } = this.props;
-    const { value } = this.state;
+    const { classes, location: { pathname } } = this.props;
+
+    const activeTab =
+      this.paths.reduce((acc, curr, i) => {
+        if (pathname.includes(curr))  acc = i;
+        return acc;
+      },-1);
 
     return (
       <BottomNavigation
-        value={value}
-        onChange={this.handleChange}
+        value={activeTab}
         showLabels
         className={classes.bottomNavigation}
       >

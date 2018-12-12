@@ -79,8 +79,8 @@ class Events extends Component {
         const { location, date, time, role, availability, pay } = eventData[0]
         
         return (
-          <Grid item xs={12}>
-            <Card className={classes.card} key={index}>
+          <Grid item xs={12} key={index}>
+            <Card className={classes.card}>
               <CardHeader
                 action={
                   <IconButton>

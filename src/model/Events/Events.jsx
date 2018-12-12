@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Events.scss';
 import { connect } from 'react-redux';
 import { compose } from 'recompose';
 import classnames from 'classnames';

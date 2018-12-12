@@ -1,6 +1,6 @@
 import { db } from '../config/firebase';
 
-export const getEvents = () => {
+const getEvents = () => {
  return db.collection('events')
     .get()
     .then(querySnapshot => {
@@ -11,3 +11,7 @@ export const getEvents = () => {
       return events
     })
 };
+
+export {
+  getEvents
+}

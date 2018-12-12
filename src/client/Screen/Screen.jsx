@@ -1,22 +1,53 @@
 import React, { Component } from 'react';
-import './Screen.scss';
 import { Route } from 'react-router-dom';
+import { compose } from 'recompose';
+import { MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 
-import MobileFooter from '../../shared/ui/MobileFooter/MobileFooter';
-import CreateEvent from '../CreateEvent/CreateEvent';
+import { Theme, CreateEvent } from '../';
+import {
+  BottomNav,
+  TopAppBar,
+} from '../../shared/ui';
 
-export default class Screen extends Component {
+const styles = theme => ({
+  Screen: {
+    padding: "0 20px",
+  },
+  footerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
+  headerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
+});
+
+class Screen extends Component {
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className="user-client-screen">
+      <div className={classes.Screen}>
+        <MuiThemeProvider theme={Theme}>
+          <div className={classes.headerSpacer}></div>
+        <Route
+          path='/user/client'
+          component={TopAppBar} />
         <Route
           path='/user/client/events/create'
-          component={CreateEvent} />
+            component={CreateEvent} />
         <Route
-          path='/user/'
-          component={MobileFooter} />
+          path='/user/client'
+          component={BottomNav} />
+        <div className={classes.footerSpacer}></div>
+        </MuiThemeProvider>
       </div>
     )
   }
 }
+
+export default compose(
+  withStyles(styles)
+)(Screen)

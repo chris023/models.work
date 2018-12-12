@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-
-import './App.scss';
-
+import { compose } from 'recompose';
 import { login } from '../shared/redux/actions/index';
 
-import Header from '../shared/ui/Header/Header';
-import LandingPage from '../shared/landing/LandingPage/LandingPage';
-import Login from '../shared/auth/Login/Login';
-import Logout from '../shared/auth/Logout/Logout';
-import ProtectedRoute from '../shared/utils/ProtectedRoute/ProtectedRoute';
-import OnboardingScreen from '../shared/auth/Onboarding/OnboaringMain/OnboardingScreen/OnboardingScreen';
-import ModelScreen from '../model/Screen/Screen';
-import ClientScreen from '../client/Screen/Screen';
+import { Login, Logout } from '../shared/ui';
+import { ProtectedRoute } from '../shared/utils';
+import { Screen as ModelScreen } from '../model';
+import { Screen as ClientScreen } from '../client';
+import { Screen as LandingScreen } from '../shared/landing';
 
+import './App.scss';
 
 
 
@@ -49,14 +45,10 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Route
-          path='/'
-          component={Header}
-        />
         <Switch>
           <Route
             exact path='/'
-            component={LandingPage} />
+            component={LandingScreen} />
           <Route
             path='/login'
             component={Login} />
@@ -69,9 +61,6 @@ class App extends Component {
           <ProtectedRoute
             path='/user'
             component={ModelScreen} />
-          <ProtectedRoute
-            path='/onboard'
-            component={OnboardingScreen} />
           <Redirect to='/' />
         </Switch>
       </div>
@@ -87,4 +76,7 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(login(user, !!user)),
 });
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(App));
+export default compose(
+  withRouter,
+  connect(mapStateToProps, mapDispatchToProps)
+)(App);

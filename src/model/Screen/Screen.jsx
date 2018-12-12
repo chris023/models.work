@@ -1,43 +1,78 @@
 import React, { Component } from 'react';
-import './Screen.scss';
 import { Route } from 'react-router-dom';
+import { Theme } from '../';
+import { MuiThemeProvider, withStyles } from '@material-ui/core/styles';
+import { compose } from 'recompose';
 
 //Components
-import Dashboard from '../Dashboard/Dashboard';
-import Events from '../Events/Events';
-import MobileFooter from '../../shared/ui/MobileFooter/MobileFooter.jsx';
-import Reports from '../Reports/Reports';
-import Wallet from '../Wallet/Wallet';
-import Settings from '../Wallet/Settings/Settings'
-import EditProfile from '../EditProfile/EditProfile';
+import {
+  Dashboard,
+  Events,
+  Reports,
+  Wallet,
+  WalletSettings,
+  EditProfile
+} from '../';
 
-export default class Screen extends Component {
+import {
+  BottomNav,
+  TopAppBar,
+} from '../../shared/ui';
+
+const styles = theme => ({
+  Screen: {
+    padding:"0 20px",
+  },
+  footerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
+  headerSpacer: {
+    height: 56 + theme.spacing.unit,
+    width: '100%',
+  },
+});
+
+class Screen extends Component {
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div className="user-model-screen">
-        <Route
+      <div className={classes.Screen}>
+        <MuiThemeProvider theme={Theme}>
+          <div className={classes.headerSpacer}></div>
+          <Route
+            path='/user/'
+            component={TopAppBar} />
+          <Route
             exact path='/user/dashboard'
             component={Dashboard} />
-        <Route
-            path='/user/events'
+          <Route
+            exact path='/user/events'
             component={Events} />
-        <Route
-            path='/user/reports'
+          <Route
+            exact path='/user/reports'
             component={Reports} />
-        <Route
+          <Route
             exact path='/user/wallet'
             component={Wallet} />
-        <Route
+          <Route
             exact path='/user/wallet/settings'
-            component={Settings} />
-        <Route 
-            path='/user/editprofile'
+            component={WalletSettings} />
+          <Route 
+            exact path='/user/profile/edit'
             component={EditProfile} />
-        <Route
+          <Route
             path='/user/'
-            component={MobileFooter} />
+            component={BottomNav} />
+          <div className={classes.footerSpacer}></div>
+        </MuiThemeProvider>
       </div>
     )
   }
 }
+
+export default compose(
+  withStyles(styles)
+)(Screen)

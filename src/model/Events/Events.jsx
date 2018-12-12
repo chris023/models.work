@@ -49,6 +49,7 @@ const styles = theme => ({
   },
   textField: {
     width: "100%",
+    margin: `${2 * theme.spacing.unit}px 0`,
   }
 });
 
@@ -133,7 +134,6 @@ class Events extends Component {
           label="Search"
           type="search"
           className={classes.textField}
-          margin="normal"
           variant="outlined"
         />
         <Grid

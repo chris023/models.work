@@ -28,7 +28,7 @@ const styles = theme => ({
     width: '100%',
   },
   headerSpacer: {
-    height: 56 + theme.spacing.unit,
+    height: 56,
     width: '100%',
   },
 });

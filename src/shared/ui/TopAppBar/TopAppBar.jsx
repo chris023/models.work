@@ -3,17 +3,29 @@ import { compose } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import { Menu as MenuIcon } from '@material-ui/icons';
 import { Drawer } from '../';
+
+import HeaderLogo from '../../../assets/logos/models.work/logo1.png';
+
 import {
   AppBar,
   Toolbar,
   IconButton,
-  Typography,
 }
   from '@material-ui/core';
 
 const styles = theme => ({
   appBar: {
     zIndex: theme.zIndex.modal + 1,
+  },
+  headerLogo: {
+    height: 25,
+    filter: 'Invert(1)',
+  },
+  hidden: {
+    visibility: 'hidden',
+  },
+  toolBar: {
+    justifyContent: "space-between"
   }
 });
 
@@ -40,13 +52,18 @@ class TopAppBar extends Component {
           position="fixed"
           className={classes.appBar}
         >
-          <Toolbar>
+          <Toolbar className={classes.toolBar}>
             <IconButton color="inherit" aria-label="Menu" onClick={this.toggleDrawer}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" color="inherit">
-              Models.work
-            </Typography>
+            <img
+              src={HeaderLogo}
+              alt="Models.work"
+              className={classes.headerLogo}
+            />
+            <IconButton className={classes.hidden}>
+              <MenuIcon />
+            </IconButton>
           </Toolbar>
         </AppBar>
       </Fragment>

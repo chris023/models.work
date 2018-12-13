@@ -88,7 +88,7 @@ class Events extends Component {
                   </IconButton>
                 }
                 title={role}
-                subheader={`${date}` + `\n` + `${time}`}
+                subheader={date + `\n` + time}
                 
                           
               />

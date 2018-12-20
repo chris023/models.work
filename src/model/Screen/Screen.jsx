@@ -21,7 +21,9 @@ import {
 
 const styles = theme => ({
   Screen: {
-    padding:"0 20px",
+    padding: "0 20px",
+    //height: subtract header,footer from vh
+    minHeight: `calc(100vh - 56px - 56px - 2 * ${theme.spacing.unit}px)` 
   },
   footerSpacer: {
     height: 56 + theme.spacing.unit,

@@ -21,4 +21,4 @@ foo@bar:~$ npm start
 ```
 
 ## Further Development
-Development has ceased on this project.
+This project is no longer under development (Jan 2019)

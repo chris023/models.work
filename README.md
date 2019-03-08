@@ -10,6 +10,7 @@ Javascript  |  React  |  Redux  |  react-router |  Firebase  |  Material-UI
 
 ## Demo
 (*refresh page if gif isn't looping*)
+
 ![](/src/assets/readme/modelsdotwork.gif)
 
 ## Instructions To Install

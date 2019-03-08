@@ -74,9 +74,24 @@ class Events extends Component {
     if (this.props.events.length) {
 
       return this.props.events.map((event, index) => {
-        
-        const eventData = Object.values(event)
-        const { location, date, time, role, availability, pay } = eventData[0]
+        console.log(event);
+        const eventData = Object.values(event)[0].inputControl;
+        const {
+          eventTitle,
+          eventType,
+          eventDate,
+          eventTime,
+          eventBrand,
+          venueName,
+          venueAddress,
+          venueContactName,
+          venueContactEmail,
+          venueContactPhone,
+          employeeType,
+          employeeNumber,
+          employeePay,
+          employeeTask,
+          employeeGender,} = eventData
         
         return (
           <Grid item xs={12} key={index}>
@@ -87,14 +102,14 @@ class Events extends Component {
                     <MoreVertIcon />
                   </IconButton>
                 }
-                title={role}
-                subheader={date + `\n` + time}
+                title={eventTitle}
+                subheader={eventDate + `\n` + eventTime}
                 
                           
               />
               <CardContent className={classes.actions}>
                 <Typography component="p">
-                  {availability} Positions Available
+                  {employeeNumber} Positions Available
                 </Typography>
                 <IconButton
                   className={classnames(classes.expand, {
@@ -108,10 +123,10 @@ class Events extends Component {
               <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
                 <CardContent>
                   <Typography>
-                    {availability} Positions Available
+                    {employeeNumber} Positions Available
                   </Typography>
                   <Typography>
-                    ${pay}/hr
+                    ${employeePay}/hr
                   </Typography>
                 </CardContent>
               </Collapse>
